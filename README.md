@@ -5,6 +5,8 @@ Project Name: Grant Delivery Workflow
 
 Summary: This project will allow a Contracting Officer (CO) to award a "grant" to a Company. The Company Point of Contact (CPOC) can accept the grant award and submit a monthly report during the period of the grant. The CO reviews the monthly report, and authorizes that month's payment for the work performed. 
 
+FrontEnd Host:
+
 Steps:
 
 1. CO awards grant with:

@@ -1,0 +1,331 @@
+{
+    "contractName": "NSFTreasury",
+    "abi": [
+        {
+            "inputs": [],
+            "name": "get",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "num",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "_num",
+                    "type": "uint256"
+                }
+            ],
+            "name": "set",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        }
+    ],
+    "metadata": "{\"compiler\":{\"version\":\"0.8.7+commit.e28d00a7\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"get\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"num\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_num\",\"type\":\"uint256\"}],\"name\":\"set\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/Users/christopherstone/Documents/GitHub/blockchain-developer-bootcamp-final-project/GrantMgmt/contracts/NSFTreasury.sol\":\"NSFTreasury\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/christopherstone/Documents/GitHub/blockchain-developer-bootcamp-final-project/GrantMgmt/contracts/NSFTreasury.sol\":{\"keccak256\":\"0x309c719d42814aeb7d155f9449a444b243287ea5576acb63d8759bd33bae1b5c\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://298d606a1e0e8e2f44890e8579b8887c295564a8fdaf21dedd4867fb1bb3fb99\",\"dweb:/ipfs/QmNQvv8hji2URm5w8SMkvEHsXPc9zjotb6gP1TpQBQRLAN\"]}},\"version\":1}",
+    "bytecode": "608060405234801561001057600080fd5b5060c28061001f6000396000f3fe6080604052348015600f57600080fd5b5060043610603c5760003560e01c80634e70b1dc14604157806360fe47b114605b5780636d4ce63c14606d575b600080fd5b604960005481565b60405190815260200160405180910390f35b606b60663660046074565b600055565b005b6000546049565b600060208284031215608557600080fd5b503591905056fea2646970667358221220602f2d2417553324b7a875b335114a6c4ce09cf5a07413a0bf21c857db31a92b64736f6c63430008070033",
+    "deployedBytecode": "6080604052348015600f57600080fd5b5060043610603c5760003560e01c80634e70b1dc14604157806360fe47b114605b5780636d4ce63c14606d575b600080fd5b604960005481565b60405190815260200160405180910390f35b606b60663660046074565b600055565b005b6000546049565b600060208284031215608557600080fd5b503591905056fea2646970667358221220602f2d2417553324b7a875b335114a6c4ce09cf5a07413a0bf21c857db31a92b64736f6c63430008070033",
+    "sourceMap": "66:368:0:-:0;;;;;;;;;;;;;;;;;;;",
+    "deployedSourceMap": "66:368:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;134:15;;;;;;;;;345:25:1;;;333:2;318:18;134:15:0;;;;;;;224:58;;;;;;:::i;:::-;265:3;:10;224:58;;;361:69;397:4;420:3;361:69;;14:180:1;73:6;126:2;114:9;105:7;101:23;97:32;94:52;;;142:1;139;132:12;94:52;-1:-1:-1;165:23:1;;14:180;-1:-1:-1;14:180:1:o",
+    "sourcePath": "/Users/christopherstone/Documents/GitHub/blockchain-developer-bootcamp-final-project/GrantMgmt/contracts/NSFTreasury.sol",
+    "compiler": {
+        "name": "solc",
+        "version": "0.8.7+commit.e28d00a7"
+    },
+    "ast": {
+        "absolutePath": "/Users/christopherstone/Documents/GitHub/blockchain-developer-bootcamp-final-project/GrantMgmt/contracts/NSFTreasury.sol",
+        "exportedSymbols": {
+            "NSFTreasury": [
+                22
+            ]
+        },
+        "id": 23,
+        "license": "MIT",
+        "nodeType": "SourceUnit",
+        "nodes": [
+            {
+                "id": 1,
+                "literals": [
+                    "solidity",
+                    ">=",
+                    "0.4",
+                    ".22",
+                    "<",
+                    "0.9",
+                    ".0"
+                ],
+                "nodeType": "PragmaDirective",
+                "src": "32:32:0"
+            },
+            {
+                "abstract": false,
+                "baseContracts": [],
+                "contractDependencies": [],
+                "contractKind": "contract",
+                "fullyImplemented": true,
+                "id": 22,
+                "linearizedBaseContracts": [
+                    22
+                ],
+                "name": "NSFTreasury",
+                "nameLocation": "75:11:0",
+                "nodeType": "ContractDefinition",
+                "nodes": [
+                    {
+                        "constant": false,
+                        "functionSelector": "4e70b1dc",
+                        "id": 3,
+                        "mutability": "mutable",
+                        "name": "num",
+                        "nameLocation": "146:3:0",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 22,
+                        "src": "134:15:0",
+                        "stateVariable": true,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                        },
+                        "typeName": {
+                            "id": 2,
+                            "name": "uint",
+                            "nodeType": "ElementaryTypeName",
+                            "src": "134:4:0",
+                            "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                            }
+                        },
+                        "visibility": "public"
+                    },
+                    {
+                        "body": {
+                            "id": 12,
+                            "nodeType": "Block",
+                            "src": "255:27:0",
+                            "statements": [
+                                {
+                                    "expression": {
+                                        "id": 10,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "lValueRequested": false,
+                                        "leftHandSide": {
+                                            "id": 8,
+                                            "name": "num",
+                                            "nodeType": "Identifier",
+                                            "overloadedDeclarations": [],
+                                            "referencedDeclaration": 3,
+                                            "src": "265:3:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_uint256",
+                                                "typeString": "uint256"
+                                            }
+                                        },
+                                        "nodeType": "Assignment",
+                                        "operator": "=",
+                                        "rightHandSide": {
+                                            "id": 9,
+                                            "name": "_num",
+                                            "nodeType": "Identifier",
+                                            "overloadedDeclarations": [],
+                                            "referencedDeclaration": 5,
+                                            "src": "271:4:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_uint256",
+                                                "typeString": "uint256"
+                                            }
+                                        },
+                                        "src": "265:10:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
+                                        }
+                                    },
+                                    "id": 11,
+                                    "nodeType": "ExpressionStatement",
+                                    "src": "265:10:0"
+                                }
+                            ]
+                        },
+                        "functionSelector": "60fe47b1",
+                        "id": 13,
+                        "implemented": true,
+                        "kind": "function",
+                        "modifiers": [],
+                        "name": "set",
+                        "nameLocation": "233:3:0",
+                        "nodeType": "FunctionDefinition",
+                        "parameters": {
+                            "id": 6,
+                            "nodeType": "ParameterList",
+                            "parameters": [
+                                {
+                                    "constant": false,
+                                    "id": 5,
+                                    "mutability": "mutable",
+                                    "name": "_num",
+                                    "nameLocation": "242:4:0",
+                                    "nodeType": "VariableDeclaration",
+                                    "scope": 13,
+                                    "src": "237:9:0",
+                                    "stateVariable": false,
+                                    "storageLocation": "default",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_uint256",
+                                        "typeString": "uint256"
+                                    },
+                                    "typeName": {
+                                        "id": 4,
+                                        "name": "uint",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "237:4:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
+                                        }
+                                    },
+                                    "visibility": "internal"
+                                }
+                            ],
+                            "src": "236:11:0"
+                        },
+                        "returnParameters": {
+                            "id": 7,
+                            "nodeType": "ParameterList",
+                            "parameters": [],
+                            "src": "255:0:0"
+                        },
+                        "scope": 22,
+                        "src": "224:58:0",
+                        "stateMutability": "nonpayable",
+                        "virtual": false,
+                        "visibility": "public"
+                    },
+                    {
+                        "body": {
+                            "id": 20,
+                            "nodeType": "Block",
+                            "src": "403:27:0",
+                            "statements": [
+                                {
+                                    "expression": {
+                                        "id": 18,
+                                        "name": "num",
+                                        "nodeType": "Identifier",
+                                        "overloadedDeclarations": [],
+                                        "referencedDeclaration": 3,
+                                        "src": "420:3:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
+                                        }
+                                    },
+                                    "functionReturnParameters": 17,
+                                    "id": 19,
+                                    "nodeType": "Return",
+                                    "src": "413:10:0"
+                                }
+                            ]
+                        },
+                        "functionSelector": "6d4ce63c",
+                        "id": 21,
+                        "implemented": true,
+                        "kind": "function",
+                        "modifiers": [],
+                        "name": "get",
+                        "nameLocation": "370:3:0",
+                        "nodeType": "FunctionDefinition",
+                        "parameters": {
+                            "id": 14,
+                            "nodeType": "ParameterList",
+                            "parameters": [],
+                            "src": "373:2:0"
+                        },
+                        "returnParameters": {
+                            "id": 17,
+                            "nodeType": "ParameterList",
+                            "parameters": [
+                                {
+                                    "constant": false,
+                                    "id": 16,
+                                    "mutability": "mutable",
+                                    "name": "",
+                                    "nameLocation": "-1:-1:-1",
+                                    "nodeType": "VariableDeclaration",
+                                    "scope": 21,
+                                    "src": "397:4:0",
+                                    "stateVariable": false,
+                                    "storageLocation": "default",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_uint256",
+                                        "typeString": "uint256"
+                                    },
+                                    "typeName": {
+                                        "id": 15,
+                                        "name": "uint",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "397:4:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
+                                        }
+                                    },
+                                    "visibility": "internal"
+                                }
+                            ],
+                            "src": "396:6:0"
+                        },
+                        "scope": 22,
+                        "src": "361:69:0",
+                        "stateMutability": "view",
+                        "virtual": false,
+                        "visibility": "public"
+                    }
+                ],
+                "scope": 23,
+                "src": "66:368:0",
+                "usedErrors": []
+            }
+        ],
+        "src": "32:403:0"
+    },
+    "functionHashes": {
+        "get()": "6d4ce63c",
+        "num()": "4e70b1dc",
+        "set(uint256)": "60fe47b1"
+    },
+    "gasEstimates": {
+        "creation": {
+            "codeDepositCost": "38800",
+            "executionCost": "93",
+            "totalCost": "38893"
+        },
+        "external": {
+            "get()": "2302",
+            "num()": "2261",
+            "set(uint256)": "22312"
+        }
+    }
+}
