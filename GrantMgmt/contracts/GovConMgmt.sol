@@ -5,6 +5,10 @@ import "@openzeppelin/contracts/token/ERC20/extensions/ERC20Burnable.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/security/Pausable.sol";
 /// @custom:security-contact chris.stone@cse-corp.com
+/*
+    Run on Ropsten
+    Load up the MetaMask account at: https://faucet.ropsten.be/
+*/
 contract GrantManager is ERC20, ERC20Burnable, Ownable, Pausable {
 
     bytes32 public constant PAUSER_ROLE = keccak256("PAUSER_ROLE");
@@ -52,7 +56,6 @@ contract GrantManager is ERC20, ERC20Burnable, Ownable, Pausable {
         internal
         whenNotPaused
         override
-        //override(ERC20)
     {
         super._beforeTokenTransfer(from, to, amount);
     }
@@ -78,31 +81,4 @@ contract GrantManager is ERC20, ERC20Burnable, Ownable, Pausable {
             false
         ));
     }
-    
-    /*
-    // you don't actually need this function.
-    function getGrantInfo(uint _index) public view returns (string memory _awardeeName, 
-            string memory _cageCode, 
-            string memory _naicsCode,
-            string memory _grantNumber,
-            uint  _laborCLINValue,
-            uint  _travelCLINValue,
-            uint  _odcValue,
-            uint  _totalAwardValue,
-            bool completed
-        ) {
-        AwardInfo storage awards = awards[_index];
-        return (
-            AwardInfo.awardeeName,
-            AwardInfo.cageCode,
-            AwardInfo.naicsCode,
-            AwardInfo.grantNumber,
-            AwardInfo.laborCLINValue,
-            AwardInfo.travelCLINValue,
-            AwardInfo.odcValue,
-            AwardInfo.totalAwardValue,
-            AwardInfo.completed
-            );
-    }
-    */
 }
