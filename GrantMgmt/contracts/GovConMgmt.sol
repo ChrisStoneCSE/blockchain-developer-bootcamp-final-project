@@ -5,16 +5,19 @@ import "@openzeppelin/contracts/token/ERC20/extensions/ERC20Burnable.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/security/Pausable.sol";
 /// @custom:security-contact chris.stone@cse-corp.com
+
 /*
     Run on Ropsten
     Load up the MetaMask account at: https://faucet.ropsten.be/
 */
+
 contract GrantManager is ERC20, ERC20Burnable, Ownable, Pausable {
 
     bytes32 public constant PAUSER_ROLE = keccak256("PAUSER_ROLE");
 
     struct AwardInfo {
         string awardeeName;
+        address awardeeAddr;
         string cageCode;
         string naicsCode;
         string grantNumber;
@@ -28,10 +31,8 @@ contract GrantManager is ERC20, ERC20Burnable, Ownable, Pausable {
     // An array of 'AwardInfo' structs
     AwardInfo[] public awards;
 
-    constructor(uint256 initialSupply) ERC20("NSFTokens", "NSFD") {
-        //_mint(msg.sender, 1 * 10 ** decimals());
-        //_mint(msg.sender, 1);
-        _mint(msg.sender, initialSupply);
+    constructor() ERC20("NSFTokens", "NSFD") {
+
     }
 
     function pause() public onlyOwner {
@@ -49,7 +50,7 @@ contract GrantManager is ERC20, ERC20Burnable, Ownable, Pausable {
 
 
     function mint(address to, uint256 amount) public onlyOwner {
-        _mint(to, amount);
+        _mint(to, amount * 10 ** decimals());
     }
 
     function _beforeTokenTransfer(address from, address to, uint256 amount)
@@ -60,7 +61,8 @@ contract GrantManager is ERC20, ERC20Burnable, Ownable, Pausable {
         super._beforeTokenTransfer(from, to, amount);
     }
 
-    function createGrant(string memory _awardeeName, 
+    function createGrant(string memory _awardeeName,
+            address _awardeeAddr,
             string memory _cageCode, 
             string memory _naicsCode,
             string memory _grantNumber,
@@ -71,6 +73,7 @@ contract GrantManager is ERC20, ERC20Burnable, Ownable, Pausable {
         ) public {
             awards.push(AwardInfo(
             _awardeeName,
+            _awardeeAddr,
             _cageCode,
             _naicsCode,
             _grantNumber,
@@ -81,4 +84,31 @@ contract GrantManager is ERC20, ERC20Burnable, Ownable, Pausable {
             false
         ));
     }
+    
+    /*
+    // you don't actually need this function.
+    function getGrantInfo(uint _index) public view returns (string memory _awardeeName, 
+            string memory _cageCode, 
+            string memory _naicsCode,
+            string memory _grantNumber,
+            uint  _laborCLINValue,
+            uint  _travelCLINValue,
+            uint  _odcValue,
+            uint  _totalAwardValue,
+            bool completed
+        ) {
+        AwardInfo storage awards = awards[_index];
+        return (
+            AwardInfo.awardeeName,
+            AwardInfo.cageCode,
+            AwardInfo.naicsCode,
+            AwardInfo.grantNumber,
+            AwardInfo.laborCLINValue,
+            AwardInfo.travelCLINValue,
+            AwardInfo.odcValue,
+            AwardInfo.totalAwardValue,
+            AwardInfo.completed
+            );
+    }
+    */
 }
