@@ -1,0 +1,414 @@
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+
+<meta charset="UTF-8">
+  
+<link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+<meta name="apple-mobile-web-app-title" content="CodePen">
+<link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+<link rel="mask-icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
+
+
+<title>Grants Management</title>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,400|Fjalla+One' rel='stylesheet' type='text/css'>
+    
+  
+<style>
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.full {
+  width: 100%;
+  float: left;
+  padding: 1em;
+}
+
+.half {
+  width: 50%;
+  float: left;
+  padding: 1em;
+}
+
+.third {
+  width: 33.3%;
+  float: left;
+  padding: 1em;
+}
+
+body {
+  text-align: center;
+  font-family: 'Lato', 'sans-serif';
+  font-weight: 400;
+}
+
+h2 {
+  font-family: "Fjalla One";
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  background: #cfdcff;
+  height: 200px;
+}
+header h2 {
+  width: 100%;
+  background: #4561ae;
+  color: #bab9db;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 1.2em;
+}
+header h2 em {
+  color: white;
+}
+header h2 a {
+  color: white;
+}
+header .icon {
+  font-family: "Fjalla One";
+  font-size: 5em;
+  font-weight: 700;
+  padding: 0.5em;
+  color: #45a2ae;
+}
+
+form {
+  padding: 4em 20%;
+  width: 80%;
+  margin: 0 auto;
+}
+@media (max-width: 960px) {
+  form {
+    width: 100%;
+    padding: 2em 10%;
+  }
+}
+
+h2.heading {
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: 300;
+  text-align: left;
+  color: #456fae;
+  border-bottom: 1px dashed #456fae;
+  padding: 1em;
+  margin-bottom: 20px;
+}
+
+.controls {
+  text-align: left;
+  position: relative;
+}
+.controls input[type="text"],
+.controls input[type="email"],
+.controls input[type="tel"],
+.controls textarea,
+.controls button,
+.controls select {
+  padding: 12px;
+  font-size: 14px;
+  border: 2px solid #808184;
+  width: 100%;
+  color: #888;
+  font-family: 'Lato', 'sans-serif';
+  font-size: 16px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.controls input[type="text"]:focus, .controls input[type="text"]:hover,
+.controls input[type="email"]:focus,
+.controls input[type="email"]:hover,
+.controls input[type="tel"]:focus,
+.controls input[type="tel"]:hover,
+.controls textarea:focus,
+.controls textarea:hover,
+.controls button:focus,
+.controls button:hover,
+.controls select:focus,
+.controls select:hover {
+  outline: none;
+  border-color: #4584ae;
+  background: #6eafce;
+}
+.controls input[type="text"]:focus + label, .controls input[type="text"]:hover + label,
+.controls input[type="email"]:focus + label,
+.controls input[type="email"]:hover + label,
+.controls input[type="tel"]:focus + label,
+.controls input[type="tel"]:hover + label,
+.controls textarea:focus + label,
+.controls textarea:hover + label,
+.controls button:focus + label,
+.controls button:hover + label,
+.controls select:focus + label,
+.controls select:hover + label {
+  color: #4561ae;
+  cursor: text;
+}
+.controls select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+.controls label {
+  position: absolute;
+  left: 20px;
+  top: 28px;
+  color: #999;
+  font-size: 16px;
+  display: inline-block;
+  padding: 4px 10px;
+  font-weight: 700;
+  transition: color 0.3s, top 0.2s, font-size 0.2s;
+}
+.controls label.active {
+  top: -10px;
+  left: 16px;
+  color: #555;
+  font-style: oblique;
+  font-size: 0.8em;
+}
+.controls textarea {
+  resize: none;
+  height: 200px;
+}
+.controls button {
+  cursor: pointer;
+  background-color: #19567c;
+  border: none;
+  color: #fff;
+  padding: 12px 0;
+  margin: 1em 0;
+}
+.controls button:hover {
+  background-color: #7dc2eb;
+}
+</style>
+
+  
+  
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+
+</head>
+
+<body translate="no" >
+  <header>  
+  <div class="icon half"><img src="images/568px-NSF.svg.png" alt="Agency Logo" height="125" width="125"></div>
+  <div class="icon half" alt="CSE"><img src="images/CSEngineering Identity_Vert.png" alt="CSE Logo" height="125" width="168"></div>
+  <h2 class="full"> Ledger: <em>goQuorum</em> &nbsp; Smart Contract: <em>0xd9145CCE52D386f254917e481eB44e9943F39138</em></h2>
+</header>
+
+
+<div id="mm-detected"></div>
+
+<!-- Connect to MetaMask Wallet -->
+
+<button id="mm-connect">Connect to MetaMask</button>
+ <!-- Display current address -->
+
+ <div id="mm-current-account"></div>
+
+
+   <!-- Provide an input to change the contract text value -->
+   <div>
+    <input id="ss-input-box" type="number" placeholder="Provide input"/>  
+  </div>
+    <button id="ss-input-button">Submit Value</button>
+  
+    <!-- Read input from contract -->
+    <div>
+      <button id="ss-get-value">Get Simple Storage value</button>
+    </div>
+    <div id="ss-display-value">Current Simple Storage Value: </div>
+
+<form action="">
+  <!--  General -->
+  <div class="form-group">
+    <h2 class="heading full">Awardee Information</h2>
+      <div class="controls full">
+        <input type="text" id="_awardeeName" class="floatLabel" name="_awardeeName">
+        <label for="_awardeeName">Awardee Name</label>
+      </div>
+      <div class="controls full">
+        <input type="text" id="_awardeeAddr" class="floatLabel" name="_awardeeAddr">
+        <label for="_awardeeAddr">Awardee Public Key</label>
+      </div>
+      <div class="controls full">
+        <input type="text" id="_grantNumber" class="floatLabel" name="_grantNumber">
+        <label for="_grantNumber">Grant Number</label>
+      </div>
+      <div class="controls half">
+        <input type="text" id="_naicsCode" class="floatLabel" name="_naicsCode">
+        <label for="_naicsCode">NAICS Code</label>
+      </div>
+      <div class="controls half">
+        <input type="text" id="_cageCode" class="floatLabel" name="_cageCode">
+        <label for="_cageCode">CAGE Code</label>
+      </div>
+  </div>
+  <!--  Details -->
+  <div class="form-group">
+    <h2 class="heading full">Grant Information</h2>
+
+    <div class="controls half">
+        <input type="text" id="_effectiveDate" class="floatLabel" name="_effectiveDate">
+        <label for="_effectiveDate">Effective Date</label>
+    </div>
+    <div class="controls half">
+        <input type="text" id="_completionDate" class="floatLabel" name="_completionDate">
+        <label for="_completionDate">Completion Date</label>
+    </div>
+
+
+    <div class="controls full">
+        <input type="text" id="_laborCLINValue" class="floatLabel" name="_laborCLINValue">
+        <label for="_laborCLINValue">Labor CLIN Value</label>
+    </div>
+
+    <div class="controls full">
+        <input type="text" id="_travelCLINValue" class="floatLabel" name="_travelCLINValue">
+        <label for="_travelCLINValue">Travel CLIN Value</label>
+    </div>
+
+    <div class="controls full">
+        <input type="text" id="_odcValue" class="floatLabel" name="_odcValue">
+        <label for="_odcValue">ODC CLIN Value</label>
+    </div>
+
+    <div class="controls full">
+        <input type="text" id="_totalAwardValue" class="floatLabel" name="_totalAwardValue">
+        <label for="_totalAwardValue">Total Awarded Value</label>
+    </div>
+
+        <input type="hidden" name="_completed" placeholder="_completed" value="false"/>
+  </div>
+  <!--  More -->
+  <div class="form-group">
+    <div class="controls full">
+      <button id="ss-input-button" class="full">Submit</button>
+    </div>
+  </div>
+</form>
+
+    <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-1b93190375e9ccc259df3a57c1abc0e64599724ae30d7ea4c6877eb615f89387.js"></script>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+      <script id="rendered-js" >
+// Added input value check on postback/load, removed floatLabel class from select input. Modified the scss, added color map.
+
+(function ($) {
+  function floatLabel(inputType) {
+    $(inputType).each(function () {
+      var $this = $(this);
+      var text_value = $(this).val();
+
+      // on focus add class "active" to label
+      $this.focus(function () {
+        $this.next().addClass("active");
+      });
+
+      // on blur check field and remove class if needed
+      $this.blur(function () {
+        if ($this.val() === '' || $this.val() === 'blank') {
+          $this.next().removeClass();
+        }
+      });
+
+      // Check input values on postback and add class "active" if value exists
+      if (text_value != '') {
+        $this.next().addClass("active");
+      }
+    });
+
+    // Automatically remove floatLabel class from select input on load
+    $("select").next().removeClass();
+  }
+  // Add a class of "floatLabel" to the input field
+  floatLabel(".floatLabel");
+})(jQuery);
+//# sourceURL=pen.js
+    </script>
+  
+  <script src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeRefreshCSS-4793b73c6332f7f14a9b6bba5d5e62748e9d1bd0b5c52d7af6376f3d1c625d7e.js"></script>
+</body>
+<script src="dapp.js"></script>
+</html>
+ 
+

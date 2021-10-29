@@ -1,1 +1,8 @@
 node_modules
+*.csv
+*.dat
+*.log
+*.out
+*.seed
+*.xml
+*.env
