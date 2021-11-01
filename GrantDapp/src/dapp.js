@@ -1,7 +1,7 @@
 
 
 // contract address on Ropsten:
-const ssAddress = '0x906B00Ba7523087840ccE4C7D0943271C7972F4e'
+const ssAddress = '0x18A30cbC6E692f0C6e3076fE15e019431EBE85DB'
 
 // add contract ABI from Remix:
 
@@ -636,7 +636,9 @@ window.addEventListener('load', function() {
 
 
 var web3 = new Web3(window.ethereum)
-
+const grantMgmt = new web3.eth.Contract(ssABI, ssAddress)
+grantMgmt.setProvider(window.ethereum)
+		
 // Grabbing the button object,  
 
 //if (document.getElementById('mm-connect')) {	
@@ -749,19 +751,19 @@ if (document.getElementById('checkPauseButton')) {
 if (document.getElementById('checkTokenButton')) {
 	const getTokenSupply = document.getElementById('checkTokenButton')
 	getTokenSupply.onclick = async () => {
-	var web3 = new Web3(window.ethereum)
-	const grantMgmt = new web3.eth.Contract(ssABI, ssAddress)
-	grantMgmt.setProvider(window.ethereum)
+	// var web3 = new Web3(window.ethereum)
+	// const grantMgmt = new web3.eth.Contract(ssABI, ssAddress)
+	// grantMgmt.setProvider(window.ethereum)
 	var valueName = await grantMgmt.methods.name().call()
 	var valueSymbol = await grantMgmt.methods.symbol().call()
 	var valueSupply = await grantMgmt.methods.totalSupply().call()
 	//console.log('Current Supply: ' + valueSupply)
-	const tokenNameValue = document.getElementById('tokenName')
-	tokenName.innerHTML = 'Token Name: ' + valueName
+	//const tokenNameValue = document.getElementById('tokenName')
+	document.getElementById('tokenName').innerHTML = 'Token Name: ' + valueName
 	const tokenSymbol = document.getElementById('tokenSymbol')
 	tokenSymbol.innerHTML = 'Token Symbol: ' + valueSymbol
 	const totalSupplyValue = document.getElementById('totalSupply')
-	totalSupplyValue.innerHTML = 'Current Supply: ' + (valueSupply * .000000000000000001)
+	totalSupplyValue.innerHTML = 'Current Supply: ' + Math.round(valueSupply * .000000000000000001)
 	} 
 } else {
 	// console.log('Check Token Button does not exist.')
@@ -774,12 +776,12 @@ if (document.getElementById('mintTokens')) {
 		console.log(addressValue)
 		const numberTokens = document.getElementById('_numToMint').value;
 		console.log(numberTokens)
-		var web3 = new Web3(window.ethereum)
-		const grantMgmt = new web3.eth.Contract(ssABI, ssAddress)
-		grantMgmt.setProvider(window.ethereum)
-		var valueMint = await grantMgmt.methods.mint(addressValue, numberTokens).send({from: ethereum.selectedAddress})
-		const mintStatus = document.getElementById('mintingComplete')
-		mintStatus.innerHTML = 'Minting Complete'
+		await grantMgmt.methods.mint(addressValue, numberTokens).send({from: ethereum.selectedAddress}).then(result => {
+			//console.log(result.transactionHash)
+			const mintStatus = document.getElementById('mintingComplete')
+			mintStatus.innerHTML = `Go to here`
+			mintStatus.href = `https://ropsten.etherscan.io/tx/${result.transactionHash}`
+		})
 	}
 }
 // Get Number of Awards
