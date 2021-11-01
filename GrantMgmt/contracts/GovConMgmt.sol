@@ -39,6 +39,11 @@ contract GrantManager is ERC20, ERC20Burnable, Ownable, Pausable {
 
     }
 
+
+    function getNumberAwards() public view returns (uint) {
+        return awards.length;
+    }
+
     function pause() public onlyOwner {
         _pause();
     }
@@ -57,7 +62,7 @@ contract GrantManager is ERC20, ERC20Burnable, Ownable, Pausable {
 
     function mint(address to, uint256 amount) public onlyOwner {
         _mint(to, amount * 10 ** decimals());
-        //_mint(to, amount);
+        // _mint(to, amount);
     }
 
     function _beforeTokenTransfer(address from, address to, uint256 amount)

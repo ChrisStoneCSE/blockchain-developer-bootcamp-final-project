@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+<meta charset="UTF-8">
+  
+<title>Grants Management</title>
+    <link rel="icon" type="image/png" href="Images/faviconCSE.png" sizes="32x32">    
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,400|Fjalla+One' rel='stylesheet' type='text/css'>
+    <link href='src/style.css' rel='stylesheet' type='text/css'>   
+
+<script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+
+</head>
+
+<body translate="no" >
+  <header>  
+    <div class="half"><img src="images/568px-NSF.svg.png" alt="Agency Logo" height="125" width="125"></div>
+    <div class="half"><h2 class="full"><em>Distributed Ledger: <em>goQuorum</em> <br> Smart Contract: <em>0x2D2f6019CAc290294c05dBef7E04a73d527279ae</em></h2></div>
+    <h2 class="full"> 
+        <a href="index.html"><em>Home</em></a>&nbsp;&nbsp;&nbsp;
+        <a href="Onboard.html"><em>Onboard</em></a>&nbsp;&nbsp;&nbsp;
+        <a href="AwardGrant.html"><em></em>Award</em></a>&nbsp;&nbsp;&nbsp;
+        <a href="ViewGrants.html"><em></em>View All</em></a>&nbsp;&nbsp;&nbsp;
+        <a href="Security.html"><em></em>Security</em></a>&nbsp;&nbsp;&nbsp;
+        <a href="Treasury.html"><em></em>Treasury</em></a>&nbsp;&nbsp;&nbsp;
+        <a href="Audit.html"><em></em>Audit</em></a>
+      </h2>
+  </header>
+
+   <!--  Token Information -->
+
+   <form onsubmit="myFunction(); return false;">    
+    <div class="form-group">
+      <h2 class="heading full">Token Treasury</h2>
+      <div class="controls full">
+      <button id="checkTokenButton" class="full"> Check Token Supply</button>
+      <div id="tokenName" class="full"></div>
+      <div id="tokenSymbol" class="full"></div>
+      <div id="totalSupply" class="full"></div>
+      </div>
+    </div>
+   </form>
+   <!--  Mint More Tokens -->
+ 
+   <form onsubmit="myFunction(); return false;">
+    <div class="form-group">
+    <h2 class="heading full">Mint More Tokens</h2>
+      <div class="controls full">
+        <input type="text" id="_receiveAddr" class="floatLabel" name="_receiveAddr">
+        <label for="_receiveAddr">Recipients Public Key</label>
+      </div>
+      <div class="controls full">
+        <input type="number" id="_numToMint" class="floatLabel" name="_numToMint">
+        <label for="_numToMint">Number of Tokens</label>
+      </div>
+        <div class="controls full">
+        <button id="mintTokens" class="full">Mint Tokens</button>
+      </div>
+      <h2 class="full" align="middle"> <em id="mintingComplete" ></em></h2>
+    </div>
+    </form>
+
+<script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-1b93190375e9ccc259df3a57c1abc0e64599724ae30d7ea4c6877eb615f89387.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+      
+<script id="rendered-js" >
+// Added input value check on postback/load, removed floatLabel class from select input. Modified the scss, added color map.
+
+(function ($) {
+  function floatLabel(inputType) {
+    $(inputType).each(function () {
+      var $this = $(this);
+      var text_value = $(this).val();
+
+      // on focus add class "active" to label
+      $this.focus(function () {
+        $this.next().addClass("active");
+      });
+
+      // on blur check field and remove class if needed
+      $this.blur(function () {
+        if ($this.val() === '' || $this.val() === 'blank') {
+          $this.next().removeClass();
+        }
+      });
+
+      // Check input values on postback and add class "active" if value exists
+      if (text_value != '') {
+        $this.next().addClass("active");
+      }
+    });
+
+    // Automatically remove floatLabel class from select input on load
+    $("select").next().removeClass();
+  }
+  // Add a class of "floatLabel" to the input field
+  floatLabel(".floatLabel");
+})(jQuery);
+//# sourceURL=pen.js
+    </script>
+  
+<script src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeRefreshCSS-4793b73c6332f7f14a9b6bba5d5e62748e9d1bd0b5c52d7af6376f3d1c625d7e.js"></script>
+</body>
+<script src="src/dapp.js"></script>
+<script language="javascript"><!--
+  function myFunction() {
+      // Do stuff
+  }
+//--></script>
+</html>
+ 
+

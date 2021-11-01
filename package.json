@@ -1,7 +1,8 @@
 {
   "dependencies": {
     "@openzeppelin/contracts": "^4.3.2",
-    "solc": "^0.8.9"
+    "solc": "^0.8.9",
+    "yarn": "^1.22.17"
   },
   "devDependencies": {
     "@openzeppelin/truffle-upgrades": "^1.10.0"

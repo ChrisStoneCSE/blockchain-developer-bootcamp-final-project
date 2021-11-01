@@ -1,7 +1,7 @@
 
 
 // contract address on Ropsten:
-const ssAddress = '0x2D2f6019CAc290294c05dBef7E04a73d527279ae'
+const ssAddress = '0x906B00Ba7523087840ccE4C7D0943271C7972F4e'
 
 // add contract ABI from Remix:
 
@@ -393,6 +393,19 @@ const ssABI =
 		"type": "function"
 	},
 	{
+		"inputs": [],
+		"name": "getNumberAwards",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
 		"inputs": [
 			{
 				"internalType": "address",
@@ -598,23 +611,26 @@ window.addEventListener('load', function() {
     console.log('window.ethereum is enabled')
     if (window.ethereum.isMetaMask === true) {
       console.log('MetaMask is active')
-      let mmDetected = document.getElementById('mm-detected')
-      mmDetected.innerHTML += 'MetaMask Is Available!'
-
+	  if (document.getElementById('mm-detected')) {	
+		let mmDetected = document.getElementById('mm-detected')
+		mmDetected.innerHTML += 'Web3 Wallet is available!'
+	  }
       // add in web3 here
       var web3 = new Web3(window.ethereum)
 
     } else {
       console.log('MetaMask is not available')
-      let mmDetected = document.getElementById('mm-detected')
-      mmDetected.innerHTML += 'MetaMask Not Available!'
-      // let node = document.createTextNode('<p>MetaMask Not Available!<p>')
-      // mmDetected.appendChild(node)
-    }
+	  if (document.getElementById('mm-detected')) {	
+		let mmDetected = document.getElementById('mm-detected')
+		mmDetected.innerHTML += 'MetaMask is not available! Please install.'
+	  }
+	}
   } else {
-    console.log('window.ethereum is not found')
-    let mmDetected = document.getElementById('mm-detected')
-    mmDetected.innerHTML += '<p>MetaMask Not Available!<p>'
+    console.log('window.ethereum - metamask - is not found')
+	if (document.getElementById('mm-detected')) {	
+		let mmDetected = document.getElementById('mm-detected')
+		mmDetected.innerHTML += '<p>MetaMask Not Available!<p>'
+	}
   }
 })
 
@@ -623,7 +639,11 @@ var web3 = new Web3(window.ethereum)
 
 // Grabbing the button object,  
 
-const mmEnable = document.getElementById('mm-connect');
+//if (document.getElementById('mm-connect')) {	
+	const mmEnable = document.getElementById('mm-connect');
+//} else {
+//	console.log('connect button is not found')
+//}
 
 // since MetaMask has been detected, we know
 // `ethereum` is an object, so we'll do the canonical
@@ -632,109 +652,168 @@ const mmEnable = document.getElementById('mm-connect');
 // typically we only request access to MetaMask when we
 // need the user to do something, but this is just for
 // an example
- 
-mmEnable.onclick = async () => {
-  await ethereum.request({ method: 'eth_requestAccounts'})
-  // grab mm-current-account
-  // and populate it with the current address
-  var mmCurrentAccount = document.getElementById('mm-current-account');
-  mmCurrentAccount.innerHTML = 'Current Account: ' + ethereum.selectedAddress
+if (document.getElementById('mm-current-account')) {	
+	mmEnable.onclick = async () => {
+	await ethereum.request({ method: 'eth_requestAccounts'})
+	// grab mm-current-account
+	// and populate it with the current address
+	var mmCurrentAccount = document.getElementById('mm-current-account');
+	mmCurrentAccount.innerHTML = 'Currently connected with account: ' + ethereum.selectedAddress
+	}
 }
-
 // grab the button for input to a contract:
+if (document.getElementById('ss-get-value')) {	
+	const ssSubmit = document.getElementById('ss-input-button');
 
-const ssSubmit = document.getElementById('ss-input-button');
+	ssSubmit.onclick = async () => {
+	// grab value from input
+	
+	const ssInputValue = document.getElementById('ss-input-box').value;
+	console.log(ssInputValue)
 
-ssSubmit.onclick = async () => {
-  // grab value from input
-  
-  const ssInputValue = document.getElementById('ss-input-box').value;
-  console.log(ssInputValue)
+	var web3 = new Web3(window.ethereum)
 
-  var web3 = new Web3(window.ethereum)
+	// instantiate smart contract instance
+	
+	const grantMgmt = new web3.eth.Contract(ssABI, ssAddress)
+	grantMgmt.setProvider(window.ethereum)
 
-  // instantiate smart contract instance
-  
-  const grantMgmt = new web3.eth.Contract(ssABI, ssAddress)
-  grantMgmt.setProvider(window.ethereum)
-
-  await grantMgmt.methods.transferOwnership(ssInputValue).send({from: ethereum.selectedAddress})
+	await grantMgmt.methods.transferOwnership(ssInputValue).send({from: ethereum.selectedAddress})
+	}
 }
 
 // Get Contract Owner
-const ssGetValue = document.getElementById('ss-get-value')
-ssGetValue.onclick = async () => {
-  var web3 = new Web3(window.ethereum)
-  const grantMgmtStorage = new web3.eth.Contract(ssABI, ssAddress)
-  grantMgmtStorage.setProvider(window.ethereum)
-  var value = await grantMgmtStorage.methods.owner().call()
-  console.log(value)
-  const ssDisplayValue = document.getElementById('ss-display-value')
-  ssDisplayValue.innerHTML = 'Current Contract Owner: ' + value
+if (document.getElementById('ss-get-value')) {	
+	const ssGetValue = document.getElementById('ss-get-value')
+	ssGetValue.onclick = async () => {
+	var web3 = new Web3(window.ethereum)
+	const grantMgmtStorage = new web3.eth.Contract(ssABI, ssAddress)
+	grantMgmtStorage.setProvider(window.ethereum)
+	var value = await grantMgmtStorage.methods.owner().call()
+	console.log(value)
+	const ssDisplayValue = document.getElementById('ss-display-value')
+	ssDisplayValue.innerHTML = 'Current Contract Owner: ' + value
+	}
 }
+
+//
+//
+//
+//
+// My dApp behavior is detailed below...
+//
+//
+//
+//
 
 // Pause Button
-const clickPauseButton = document.getElementById('pauseButton')
-clickPauseButton.onclick = async () => {
-	var web3 = new Web3(window.ethereum)
-	const grantMgmt = new web3.eth.Contract(ssABI, ssAddress)
-	grantMgmt.setProvider(window.ethereum)
-	var value = await grantMgmt.methods.pause().send({from: ethereum.selectedAddress})
+if (document.getElementById('pauseButton')) {	
+	const clickPauseButton = document.getElementById('pauseButton')
+	clickPauseButton.onclick = async () => {
+		var web3 = new Web3(window.ethereum)
+		const grantMgmt = new web3.eth.Contract(ssABI, ssAddress)
+		grantMgmt.setProvider(window.ethereum)
+		var value = await grantMgmt.methods.pause().send({from: ethereum.selectedAddress})
+		console.log(value)
+		var pauseValue = document.getElementById('pause-value');
+		pauseValue.innerHTML = 'True'
+	}
 }
-
 // Unpause Button
-const clickUnpauseButton = document.getElementById('unpauseButton')
-clickUnpauseButton.onclick = async () => {
-	var web3 = new Web3(window.ethereum)
-	const grantMgmt = new web3.eth.Contract(ssABI, ssAddress)
-	grantMgmt.setProvider(window.ethereum)
-	var value = await grantMgmt.methods.unpause().send({from: ethereum.selectedAddress})
+if (document.getElementById('unpauseButton')) {
+	const clickUnpauseButton = document.getElementById('unpauseButton')
+	clickUnpauseButton.onclick = async () => {
+		var web3 = new Web3(window.ethereum)
+		const grantMgmt = new web3.eth.Contract(ssABI, ssAddress)
+		grantMgmt.setProvider(window.ethereum)
+		var value = await grantMgmt.methods.unpause().send({from: ethereum.selectedAddress})
+		console.log(value)
+		var pauseValue = document.getElementById('pause-value');
+		pauseValue.innerHTML = 'False'
+	}
 }
-
 // Get Paused Status
-const getPauseValue = document.getElementById('checkPauseButton')
-getPauseValue.onclick = async () => {
-  var web3 = new Web3(window.ethereum)
-  const grantMgmt = new web3.eth.Contract(ssABI, ssAddress)
-  grantMgmt.setProvider(window.ethereum)
-  var value = await grantMgmt.methods.paused().call()
-  console.log(value)
-  const pausedValue = document.getElementById('pause-value')
-  pausedValue.innerHTML = value
+if (document.getElementById('checkPauseButton')) {
+	const getPauseValue = document.getElementById('checkPauseButton')
+	getPauseValue.onclick = async () => {
+		var web3 = new Web3(window.ethereum)
+		const grantMgmt = new web3.eth.Contract(ssABI, ssAddress)
+		grantMgmt.setProvider(window.ethereum)
+		var value = await grantMgmt.methods.paused().call()
+		console.log(value)
+		const pausedValue = document.getElementById('pause-value')
+		pausedValue.innerHTML = 'Contract is Paused: ' + value
+	}
 }
-
 // Get Token Information
-
-const getTokenSupply = document.getElementById('checkTokenButton')
-getTokenSupply.onclick = async () => {
-  var web3 = new Web3(window.ethereum)
-  const grantMgmt = new web3.eth.Contract(ssABI, ssAddress)
-  grantMgmt.setProvider(window.ethereum)
-  var valueName = await grantMgmt.methods.name().call()
-  var valueSymbol = await grantMgmt.methods.symbol().call()
-  var valueSupply = await grantMgmt.methods.totalSupply().call()
-  //console.log('Current Supply: ' + valueSupply)
-  const tokenNameValue = document.getElementById('tokenName')
-  tokenName.innerHTML = 'Token Name: ' + valueName
-  const tokenSymbol = document.getElementById('tokenSymbol')
-  tokenSymbol.innerHTML = 'Token Symbol: ' + valueSymbol
-  const totalSupplyValue = document.getElementById('totalSupply')
-  totalSupply.innerHTML = 'Current Supply: ' + (valueSupply * .000000000000000001)
-} 
-
-// Mint Tokens
-const clickMintButton = document.getElementById('mintTokens')
-clickMintButton.onclick = async () => {
-	const addressValue = document.getElementById('_receiveAddr').value;
-	console.log(addressValue)
-	const numberTokens = document.getElementById('_numToMint').value;
-	//const bnNumberTokens = web3.utils.toBN(numberTokens)
-	console.log(numberTokens)
+if (document.getElementById('checkTokenButton')) {
+	const getTokenSupply = document.getElementById('checkTokenButton')
+	getTokenSupply.onclick = async () => {
 	var web3 = new Web3(window.ethereum)
 	const grantMgmt = new web3.eth.Contract(ssABI, ssAddress)
 	grantMgmt.setProvider(window.ethereum)
-	await grantMgmt.methods.mint(addressValue, numberTokens).send({from: ethereum.selectedAddress})
-	//var value = await grantMgmt.methods.unpause().send({from: ethereum.selectedAddress})
+	var valueName = await grantMgmt.methods.name().call()
+	var valueSymbol = await grantMgmt.methods.symbol().call()
+	var valueSupply = await grantMgmt.methods.totalSupply().call()
+	//console.log('Current Supply: ' + valueSupply)
+	const tokenNameValue = document.getElementById('tokenName')
+	tokenName.innerHTML = 'Token Name: ' + valueName
+	const tokenSymbol = document.getElementById('tokenSymbol')
+	tokenSymbol.innerHTML = 'Token Symbol: ' + valueSymbol
+	const totalSupplyValue = document.getElementById('totalSupply')
+	totalSupplyValue.innerHTML = 'Current Supply: ' + (valueSupply * .000000000000000001)
+	} 
+} else {
+	// console.log('Check Token Button does not exist.')
+}
+// Mint Tokens
+if (document.getElementById('mintTokens')) {
+	const clickMintButton = document.getElementById('mintTokens')
+	clickMintButton.onclick = async () => {
+		const addressValue = document.getElementById('_receiveAddr').value;
+		console.log(addressValue)
+		const numberTokens = document.getElementById('_numToMint').value;
+		console.log(numberTokens)
+		var web3 = new Web3(window.ethereum)
+		const grantMgmt = new web3.eth.Contract(ssABI, ssAddress)
+		grantMgmt.setProvider(window.ethereum)
+		var valueMint = await grantMgmt.methods.mint(addressValue, numberTokens).send({from: ethereum.selectedAddress})
+		const mintStatus = document.getElementById('mintingComplete')
+		mintStatus.innerHTML = 'Minting Complete'
+	}
+}
+// Get Number of Awards
+if (document.getElementById('checkAwards')) {
+	const getTokenSupply = document.getElementById('checkAwards')
+	getTokenSupply.onclick = async () => {
+	var web3 = new Web3(window.ethereum)
+	const grantMgmt = new web3.eth.Contract(ssABI, ssAddress)
+	grantMgmt.setProvider(window.ethereum)
+	var valueAwardsNumber = await grantMgmt.methods.getNumberAwards().call()
+	console.log('Number of Awards: ' + valueAwardsNumber)
+	const awardsNumberValue = document.getElementById('awardsNumber')
+	awardsNumberValue.innerHTML = 'Number of Awards: ' + valueAwardsNumber
+	} 
+} else {
+	// console.log('Check Awards Button does not exist.')
+}
+
+// Get a specific award
+if (document.getElementById('_awardID')) {
+	const getAwardInfo = document.getElementById('getAwardInfo')
+	getAwardInfo.onclick = async () => {
+		var web3 = new Web3(window.ethereum)
+		const grantMgmt = new web3.eth.Contract(ssABI, ssAddress)
+		grantMgmt.setProvider(window.ethereum)
+		const awardIDValue = document.getElementById('_awardID').value;
+		var valueAwardInfo = await grantMgmt.methods.awards(awardIDValue).call()
+		Object.values(valueAwardInfo).forEach(val => console.log(val));
+		const awardsInfoValue = document.getElementById('awardInfo')
+		let arr = valueAwardInfo;
+		document.getElementById("awardInfo").innerHTML = JSON.stringify(arr, null, 2);
+	}
+} else {
+	// console.log('Get Awards Info Button does not exist.')
 }
 
 // 0x645613D29062BFD2249faE7842C7eD184AaF0EA4

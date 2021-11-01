@@ -30,6 +30,8 @@ ol, ul {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+  margin-left: auto; 
+  margin-right: auto;
 }
 
 caption, th, td {
