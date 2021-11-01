@@ -39,11 +39,17 @@ contract GrantManager is ERC20, ERC20Burnable, Ownable, Pausable {
 
     }
 
-
     function getNumberAwards() public view returns (uint) {
         return awards.length;
     }
 
+    // Solidity can return the entire array.
+    // But this function should be avoided for
+    // arrays that can grow indefinitely in length.
+    /*    function getAllAwards() public view returns (uint[] memory) {
+        return awards;
+    }
+*/
     function pause() public onlyOwner {
         _pause();
     }
