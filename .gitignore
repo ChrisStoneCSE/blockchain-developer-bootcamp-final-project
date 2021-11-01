@@ -6,3 +6,5 @@ node_modules
 *.seed
 *.xml
 *.env
+GrantDapp/MetaMask/metamask-docs/
+GrantDapp/MetaMask/metamask-onboarding/
