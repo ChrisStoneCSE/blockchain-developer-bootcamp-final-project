@@ -24,7 +24,8 @@
 <body translate="no" >
   <header>  
     <div class="half"><img src="images/568px-NSF.svg.png" alt="Agency Logo" height="125" width="125"></div>
-    <div class="half"><h2 class="full"><em>Distributed Ledger: <em>goQuorum</em> <br> Smart Contract: <em>0x2D2f6019CAc290294c05dBef7E04a73d527279ae</em></h2></div>
+    <!-- <div class="half"><h2 class="full"><em>Distributed Ledger: <em>goQuorum</em> <br> Smart Contract: <em>0x2D2f6019CAc290294c05dBef7E04a73d527279ae</em></h2></div> -->
+    <div class="half"><h2 class="full"><em>Smart Contract for Grants</em></h2></div>
    <!-- <h2 class="full"> Distributed Ledger: <em>goQuorum</em> &nbsp; Smart Contract: <em>0x2D2f6019CAc290294c05dBef7E04a73d527279ae</em></h2> -->
    <h2 class="full"> 
     <a href="index.html"><em>Home</em></a>&nbsp;&nbsp;&nbsp;
@@ -47,11 +48,23 @@
       <button id="pauseButton" class="full">Pause Contract</button>
       <button id="unpauseButton" class="full">Unpause Contract</button>
       <!-- <div id="pause-value" class="full"></div> -->
-
     </div>
   </div>
   </form>
  
+  <form onsubmit="myFunction(); return false;">  
+    <div class="form-group">
+      <h2 class="heading full">Ownership Controls</h2>
+          <div class="controls full">
+            <input type="text" id="_newOwner" class="floatLabel" name="_newOwner">
+            <label for="_newOwner">New Owner</label>
+          </div>
+          <div class="controls full">
+            <button id="clickTransfer" class="full">Transfer Ownership</button>
+          </div>
+          <h2 class="full" align="middle"> <a target="_blank" id="ownershipChanged" ></a></h2>
+    </div>
+    </form>
 
 <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-1b93190375e9ccc259df3a57c1abc0e64599724ae30d7ea4c6877eb615f89387.js"></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
