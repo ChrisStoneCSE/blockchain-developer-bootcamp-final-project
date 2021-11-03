@@ -1,5 +1,6 @@
-
-
+//import 'ses';
+//lockdown();
+// hardens the entire surface of the JS environment
 // contract address on Ropsten:
 const ssAddress = '0x18A30cbC6E692f0C6e3076fE15e019431EBE85DB'
 
