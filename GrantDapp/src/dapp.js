@@ -779,8 +779,13 @@ if (document.getElementById('clickTransfer')) {
 		console.log(newOwnerValue)
 		await grantMgmt.methods.transferOwnership(newOwnerValue).send({from: ethereum.selectedAddress}).then(result => {
 			//console.log(result.transactionHash)
-			ownershipChanged.innerHTML = `New owner is assigned: `
+			ownershipChanged.innerHTML = `New owner is Assigned`
 			ownershipChanged.href = `https://ropsten.etherscan.io/tx/${result.transactionHash}`
+// do I need await in the line below?
+//			var valueOwner = grantMgmtStorage.methods.owner().call()
+			console.log(newOwnerValue)
+			const showOwner = document.getElementById('whoIsOwner')
+			showOwner.innerHTML = 'Current Contract Owner: ' + newOwnerValue
 		})
 	}
 }
