@@ -616,9 +616,8 @@ window.addEventListener('load', function() {
     if (window.ethereum.isMetaMask === true) {
       // console.log('MetaMask is active')
 	  // console.log('getting current owner')
-	  const showOwnerOnLoad = document.getElementById('whoIsOwner')
-	  showOwnerOnLoad.innerHTML = 'Current Contract Owner: ' + ethereum.selectedAddress
-
+	//   const showOwnerOnLoad = document.getElementById('whoIsOwner')
+	//   showOwnerOnLoad.innerHTML = 'Current Contract Owner: ' + ethereum.selectedAddress
     } else {
       // console.log('MetaMask is not available')
 		window.location.assign("Onboard.html")
@@ -630,33 +629,27 @@ window.addEventListener('load', function() {
 })
 
 
-
-//var valueOnLoad = await grantMgmt.methods.paused().call()
-//console.log(value)
-
-
 var web3 = new Web3(window.ethereum)
 const grantMgmt = new web3.eth.Contract(ssABI, ssAddress)
 grantMgmt.setProvider(window.ethereum)
 
 window.onload = async () => {
-	var valueOnLoad = await grantMgmt.methods.paused().call()
-	const pausedValueOnLoad = document.getElementById('pause-value')
-	// do I need this next line???????????????????????????????????????????????????????????
-	const getCheckPauseValue = document.getElementById('checkPauseButton')
-	const getPauseValue = document.getElementById('pauseButton')
-	const getUnPauseValue = document.getElementById('unpauseButton')
-	getCheckPauseValue.style.visibility = "hidden"
-	if (valueOnLoad == 'false') {
-		pausedValueOnLoad.innerHTML = 'Contract is Paused'
-		getPauseValue.style.visibility = "hidden"
-		getUnPauseValue.style.visibility = "visible"
-	} else {
-		pausedValueOnLoad.innerHTML = 'Contract is Not Paused'
-		getUnPauseValue.style.visibility = "hidden"
-		getPauseValue.style.visibility = "visible"
-	}
+	const getTokenSupply = document.getElementById('checkTokenButton')
+	var valueName = await grantMgmt.methods.name().call()
+	var valueSymbol = await grantMgmt.methods.symbol().call()
+	var valueSupply = await grantMgmt.methods.totalSupply().call()
+	//console.log('Current Supply: ' + valueSupply)
+	//const tokenNameValue = document.getElementById('tokenName')
+	document.getElementById('tokenName').innerHTML = 'Token Name: ' + valueName
+	const tokenSymbol = document.getElementById('tokenSymbol')
+	tokenSymbol.innerHTML = 'Token Symbol: ' + valueSymbol
+	const totalSupplyValue = document.getElementById('totalSupply')
+	totalSupplyValue.innerHTML = 'Current Supply: ' + Math.round(valueSupply * .000000000000000001)
+
+	const hideButton = document.getElementById('checkTokenButton')
+	hideButton.style.visibility = "hidden"
 }
+
 //
 //
 //
@@ -667,86 +660,41 @@ window.onload = async () => {
 //
 //
 
-// Pause Button
-if (document.getElementById('pauseButton')) {	
-	const clickPauseButton = document.getElementById('pauseButton')
-	clickPauseButton.onclick = async () => {
-		var value = await grantMgmt.methods.pause().send({from: ethereum.selectedAddress})
-		// console.log(value)
-		var pauseValue = document.getElementById('pause-value');
-		pauseValue.innerHTML = 'Contract is Paused'
-		const getCheckPauseValue = document.getElementById('checkPauseButton')
-		getCheckPauseValue.style.visibility = "hidden"
-		const getPauseValue = document.getElementById('pauseButton')
-		getPauseValue.style.visibility = "hidden"
-		const getUnPauseValue = document.getElementById('unpauseButton')
-		getUnPauseValue.style.visibility = "visible"
-	}
-}
-// Unpause Button
-if (document.getElementById('unpauseButton')) {
-	const clickUnpauseButton = document.getElementById('unpauseButton')
-	clickUnpauseButton.onclick = async () => {
-		var value = await grantMgmt.methods.unpause().send({from: ethereum.selectedAddress})
-		// console.log(value)
-		var pauseValue = document.getElementById('pause-value');
-		pauseValue.innerHTML = 'Contract is Not Paused'
-		const getCheckPauseValue = document.getElementById('checkPauseButton')
-		getCheckPauseValue.style.visibility = "hidden"
-		const getUnPauseValue = document.getElementById('unpauseButton')
-		getUnPauseValue.style.visibility = "hidden"
-		const getPauseValue = document.getElementById('pauseButton')
-		getPauseValue.style.visibility = "visible"
-	}
-}
-// Get Paused Status
-if (document.getElementById('checkPauseButton')) {
-	const getCheckPauseValue = document.getElementById('checkPauseButton')
-	const getPauseValue = document.getElementById('pauseButton')
-	const getUnPauseValue = document.getElementById('unpauseButton')
-	
-	getPauseValue.style.visibility = "hidden"
-	getUnPauseValue.style.visibility = "hidden"
-
-	getCheckPauseValue.onclick = async () => {
-		var value = await grantMgmt.methods.paused().call()
-		//console.log(value)
-		const pausedValue = document.getElementById('pause-value')
-		// pausedValue.innerHTML = 'Contract is Paused ' + value
-	
-		if (value == 'false') {
-			pausedValue.innerHTML = 'Contract is Paused'
-			//console.log('show pause button')
-			getPauseValue.style.visibility = "hidden"
-			getUnPauseValue.style.visibility = "visible"
-		} else {
-			pausedValue.innerHTML = 'Contract is Not Paused'
-//			console.log('show unpause button')
-			getUnPauseValue.style.visibility = "hidden"
-			getPauseValue.style.visibility = "visible"
-		}
-	}
+// If I get rid of the check Token button, this block is superfluous
+// Get Token Information
+if (document.getElementById('checkTokenButton')) {
+	const getTokenSupply = document.getElementById('checkTokenButton')
+	getTokenSupply.onclick = async () => {
+	var valueName = await grantMgmt.methods.name().call()
+	var valueSymbol = await grantMgmt.methods.symbol().call()
+	var valueSupply = await grantMgmt.methods.totalSupply().call()
+	document.getElementById('tokenName').innerHTML = 'Token Name: ' + valueName
+	const tokenSymbol = document.getElementById('tokenSymbol')
+	tokenSymbol.innerHTML = 'Token Symbol: ' + valueSymbol
+	const totalSupplyValue = document.getElementById('totalSupply')
+	totalSupplyValue.innerHTML = 'Current Supply: ' + Math.round(valueSupply * .000000000000000001)
+	} 
+} else {
+	// console.log('Check Token Button does not exist.')
 }
 
 
-// Ownership Functionality
-if (document.getElementById('clickTransfer')) {
-	const clickTransfer = document.getElementById('clickTransfer')
-
-	clickTransfer.onclick = async () => {
-		const newOwnerValue = document.getElementById('_newOwner').value;
-		const ownershipChanged = document.getElementById('ownershipChanged')
-		ownershipChanged.innerHTML = ``
-		console.log(newOwnerValue)
-		await grantMgmt.methods.transferOwnership(newOwnerValue).send({from: ethereum.selectedAddress}).then(result => {
-			//console.log(result.transactionHash)
-			ownershipChanged.innerHTML = `New owner is Assigned`
-			ownershipChanged.href = `https://ropsten.etherscan.io/tx/${result.transactionHash}`
-// do I need await in the line below?
-//			var valueOwner = grantMgmtStorage.methods.owner().call()
-//			console.log(newOwnerValue)
-			const showOwner = document.getElementById('whoIsOwner')
-			showOwner.innerHTML = 'Current Contract Owner: ' + newOwnerValue
+// Mint Tokens
+if (document.getElementById('mintTokens')) {
+	const clickMintButton = document.getElementById('mintTokens')
+	clickMintButton.onclick = async () => {
+		const mintStatus = document.getElementById('mintingComplete')
+		mintStatus.innerHTML = ``
+		const addressValue = document.getElementById('_receiveAddr').value;
+		const numberTokens = document.getElementById('_numToMint').value;
+		await grantMgmt.methods.mint(addressValue, numberTokens).send({from: ethereum.selectedAddress}).then(result => {
+			mintStatus.innerHTML = `See Transaction Information by Clicking Here`
+			mintStatus.href = `https://ropsten.etherscan.io/tx/${result.transactionHash}`
 		})
+		var updatedSupplyValue = await grantMgmt.methods.totalSupply().call()
+		const setNewSupplyValue = document.getElementById('totalSupply')
+		setNewSupplyValue.innerHTML = 'Current Supply: ' + Math.round(updatedSupplyValue * .000000000000000001)
+		document.getElementById('_receiveAddr').value = ''
+		document.getElementById('_numToMint').value = ''
 	}
 }
