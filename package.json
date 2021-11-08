@@ -6,6 +6,7 @@
     "yarn": "^1.22.17"
   },
   "devDependencies": {
-    "@openzeppelin/truffle-upgrades": "^1.10.0"
+    "@openzeppelin/truffle-upgrades": "^1.10.0",
+    "@truffle/hdwallet-provider": "^1.6.0"
   }
 }

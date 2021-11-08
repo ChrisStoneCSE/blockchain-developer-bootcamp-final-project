@@ -35,7 +35,7 @@ contract GrantManager is ERC20, ERC20Burnable, Ownable, Pausable {
     // An array of 'AwardInfo' structs
     AwardInfo[] public awards;
 
-    constructor() ERC20("NSFXTokens", "NSFX") {
+    constructor() ERC20("NSFCTokens", "NSFC") {
 
     }
 
@@ -90,7 +90,7 @@ contract GrantManager is ERC20, ERC20Burnable, Ownable, Pausable {
             uint  _travelCLINValue,
             uint  _odcValue,
             uint  _totalAwardValue
-        ) public {
+        ) public onlyOwner {
             awards.push(AwardInfo(
             _awardeeName,
             _awardeeAddr,

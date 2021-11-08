@@ -6,5 +6,7 @@ node_modules
 *.seed
 *.xml
 *.env
+*.secret
+GrantMgmt/.secret
 GrantDapp/MetaMask/metamask-docs/
 GrantDapp/MetaMask/metamask-onboarding/

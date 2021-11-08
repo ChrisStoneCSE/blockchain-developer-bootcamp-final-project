@@ -40,27 +40,27 @@
 
 
   <!--  Company Information -->
-  <form onsubmit="myFunction(); return false;">
+  <form id="_createForm" onsubmit="myFunction(); return false;">
     <div class="form-group">
     <h2 class="heading full">Awardee Information</h2>
       <div class="controls full">
-        <input type="text" id="_awardeeName" class="floatLabel" name="_awardeeName">
+        <input type="text" id="_awardeeName" class="floatLabel" name="_awardeeName" required>
         <label for="_awardeeName">Awardee Name</label>
       </div>
       <div class="controls full">
-        <input type="text" id="_awardeeAddr" class="floatLabel" name="_awardeeAddr">
+        <input type="text" id="_awardeeAddr" class="floatLabel" name="_awardeeAddr" required>
         <label for="_awardeeAddr">Awardee Public Key</label>
       </div>
       <div class="controls full">
-        <input type="text" id="_grantNumber" class="floatLabel" name="_grantNumber">
+        <input type="text" id="_grantNumber" class="floatLabel" name="_grantNumber" required>
         <label for="_grantNumber">Grant Number</label>
       </div>
       <div class="controls half">
-        <input type="text" id="_naicsCode" class="floatLabel" name="_naicsCode">
+        <input type="text" id="_naicsCode" class="floatLabel" name="_naicsCode" required>
         <label for="_naicsCode">NAICS Code</label>
       </div>
       <div class="controls half">
-        <input type="text" id="_cageCode" class="floatLabel" name="_cageCode">
+        <input type="text" id="_cageCode" class="floatLabel" name="_cageCode" required>
         <label for="_cageCode">CAGE Code</label>
       </div>
   </div>
@@ -69,31 +69,31 @@
     <h2 class="heading full">Grant Information</h2>
 
     <div class="controls half">
-        <input type="text" id="_effectiveDate" class="floatLabel" name="_effectiveDate">
+        <input type="text" id="_effectiveDate" class="floatLabel" name="_effectiveDate" required>
         <label for="_effectiveDate">Effective Date</label>
     </div>
     <div class="controls half">
-        <input type="text" id="_completionDate" class="floatLabel" name="_completionDate">
+        <input type="text" id="_completionDate" class="floatLabel" name="_completionDate" required>
         <label for="_completionDate">Completion Date</label>
     </div>
 
     <div class="controls full">
-        <input type="text" id="_laborCLINValue" class="floatLabel" name="_laborCLINValue">
+        <input type="text" id="_laborCLINValue" class="floatLabel" name="_laborCLINValue" required>
         <label for="_laborCLINValue">Labor CLIN Value</label>
     </div>
 
     <div class="controls full">
-        <input type="text" id="_travelCLINValue" class="floatLabel" name="_travelCLINValue">
+        <input type="text" id="_travelCLINValue" class="floatLabel" name="_travelCLINValue" required>
         <label for="_travelCLINValue">Travel CLIN Value</label>
     </div>
 
     <div class="controls full">
-        <input type="text" id="_odcValue" class="floatLabel" name="_odcValue">
+        <input type="text" id="_odcValue" class="floatLabel" name="_odcValue" required>
         <label for="_odcValue">ODC CLIN Value</label>
     </div>
 
     <div class="controls full">
-        <input type="text" id="_totalAwardValue" class="floatLabel" name="_totalAwardValue">
+        <input type="text" id="_totalAwardValue" class="floatLabel" name="_totalAwardValue" required>
         <label for="_totalAwardValue">Total Awarded Value</label>
     </div>
 
@@ -104,8 +104,11 @@
     <div class="controls full">
       <button id="createGrant-button" class="full">Create Grant</button>
     </div>
+    <h2 class="full" align="middle"> <a target="_blank" id="creationComplete" ></a></h2>
   </div>
   </form>
+
+
 
 <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-1b93190375e9ccc259df3a57c1abc0e64599724ae30d7ea4c6877eb615f89387.js"></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
@@ -148,7 +151,7 @@
   
 <script src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeRefreshCSS-4793b73c6332f7f14a9b6bba5d5e62748e9d1bd0b5c52d7af6376f3d1c625d7e.js"></script>
 </body>
-<script src="src/dapp.js"></script>
+<script src="src/dappAward.js"></script>
 <script language="javascript"><!--
   function myFunction() {
       // Do stuff
