@@ -1,8 +1,12 @@
 {
   "dependencies": {
     "@openzeppelin/contracts": "^4.3.2",
+    "bip39": "^3.0.4",
+    "dotenv": "^10.0.0",
+    "fs": "^0.0.1-security",
     "ses": "^0.15.0",
     "solc": "^0.8.9",
+    "truffle-hdwallet-provider": "^1.0.17",
     "yarn": "^1.22.17"
   },
   "devDependencies": {

@@ -10,3 +10,4 @@ node_modules
 GrantMgmt/.secret
 GrantDapp/MetaMask/metamask-docs/
 GrantDapp/MetaMask/metamask-onboarding/
+GrantMgmt/truffle-config.js

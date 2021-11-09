@@ -19873,6 +19873,12 @@
     "version": "0.8.2+commit.661d1103.Emscripten.clang"
   },
   "networks": {
+    "3": {
+      "events": {},
+      "links": {},
+      "address": "0xBAF1dE02887C0Ac063aD906fb0A6165893a3397D",
+      "transactionHash": "0xcaed5c2d6bc9c681d29312c62b3a1b2b919fd1edd2772553b6ebc536432daaf5"
+    },
     "5777": {
       "events": {
         "0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925": {
@@ -19972,12 +19978,12 @@
         }
       },
       "links": {},
-      "address": "0x5E937DCE910c98032491119569921E82fDd0f23e",
-      "transactionHash": "0x5efa737918d53668883bc5288302ab181941573eeb784576cd7f887e4cbfa6a4"
+      "address": "0xc36901C7Dfc5d21Cf76083506c94a79dacAbe88c",
+      "transactionHash": "0x2285b2be2cdcbcd81fdf97a1d2496cd64669bd5adfee03fe0eaa4a7910a0a437"
     }
   },
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-11-08T20:01:48.434Z",
+  "updatedAt": "2021-11-09T01:03:24.439Z",
   "networkType": "ethereum",
   "devdoc": {
     "custom:security-contact": "chris.stone@cse-corp.com",

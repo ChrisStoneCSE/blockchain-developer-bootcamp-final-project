@@ -8,7 +8,7 @@ Please answer the following questions. Does your project:
 
 And has your public Ethereum address if you'd like your certification as an NFT (optional)? YES
 
-ChrisStone.eth
+ChrisStone.eth or 0x00000
 
 3. Contain smart contract(s) which:
 --Are commented to the specs described by NatSpec Solidity documentation
@@ -35,6 +35,12 @@ ChrisStone.eth
 9. Have clear instructions for: 
 1) Installing dependencies for your project
 // @openzeppelin    
+// node.JS
+// CDN?
+npm install -g truffle
+npm install --save-dev @truffle/hdwallet-provider
+
+
 2) Accessing or—if your project needs a server (not required)—running your project
 
 3) Running your smart contract unit tests and which port a local testnet should be running on. YES/NO
