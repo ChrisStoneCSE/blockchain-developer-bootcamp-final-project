@@ -634,7 +634,7 @@ const grantMgmt = new web3.eth.Contract(ssABI, ssAddress)
 grantMgmt.setProvider(window.ethereum)
 
 window.onload = async () => {
-	const getTokenSupply = document.getElementById('checkTokenButton')
+	// const getTokenSupply = document.getElementById('checkTokenButton')
 	var valueName = await grantMgmt.methods.name().call()
 	var valueSymbol = await grantMgmt.methods.symbol().call()
 	var valueSupply = await grantMgmt.methods.totalSupply().call()
@@ -646,8 +646,8 @@ window.onload = async () => {
 	const totalSupplyValue = document.getElementById('totalSupply')
 	totalSupplyValue.innerHTML = 'Current Supply: ' + Math.round(valueSupply * .000000000000000001)
 
-	const hideButton = document.getElementById('checkTokenButton')
-	hideButton.style.visibility = "hidden"
+	// const hideButton = document.getElementById('checkTokenButton')
+	// hideButton.style.visibility = "hidden"
 }
 
 //
@@ -662,21 +662,21 @@ window.onload = async () => {
 
 // If I get rid of the check Token button, this block is superfluous
 // Get Token Information
-if (document.getElementById('checkTokenButton')) {
-	const getTokenSupply = document.getElementById('checkTokenButton')
-	getTokenSupply.onclick = async () => {
-	var valueName = await grantMgmt.methods.name().call()
-	var valueSymbol = await grantMgmt.methods.symbol().call()
-	var valueSupply = await grantMgmt.methods.totalSupply().call()
-	document.getElementById('tokenName').innerHTML = 'Token Name: ' + valueName
-	const tokenSymbol = document.getElementById('tokenSymbol')
-	tokenSymbol.innerHTML = 'Token Symbol: ' + valueSymbol
-	const totalSupplyValue = document.getElementById('totalSupply')
-	totalSupplyValue.innerHTML = 'Current Supply: ' + Math.round(valueSupply * .000000000000000001)
-	} 
-} else {
-	// console.log('Check Token Button does not exist.')
-}
+// if (document.getElementById('checkTokenButton')) {
+// 	const getTokenSupply = document.getElementById('checkTokenButton')
+// 	getTokenSupply.onclick = async () => {
+// 	var valueName = await grantMgmt.methods.name().call()
+// 	var valueSymbol = await grantMgmt.methods.symbol().call()
+// 	var valueSupply = await grantMgmt.methods.totalSupply().call()
+// 	document.getElementById('tokenName').innerHTML = 'Token Name: ' + valueName
+// 	const tokenSymbol = document.getElementById('tokenSymbol')
+// 	tokenSymbol.innerHTML = 'Token Symbol: ' + valueSymbol
+// 	const totalSupplyValue = document.getElementById('totalSupply')
+// 	totalSupplyValue.innerHTML = 'Current Supply: ' + Math.round(valueSupply * .000000000000000001)
+// 	} 
+// } else {
+// 	// console.log('Check Token Button does not exist.')
+// }
 
 
 // Mint Tokens

@@ -8,7 +8,8 @@ Please answer the following questions. Does your project:
 
 And has your public Ethereum address if you'd like your certification as an NFT (optional)? YES
 
-ChrisStone.eth or 0x00000
+0x17Aa4c39d9B3996B2f7994da83E14c5ACB5f9d7b
+
 
 3. Contain smart contract(s) which:
 --Are commented to the specs described by NatSpec Solidity documentation
@@ -39,7 +40,8 @@ ChrisStone.eth or 0x00000
 // CDN?
 npm install -g truffle
 npm install --save-dev @truffle/hdwallet-provider
-
+npm install --save fs
+npm install bip39 dotenv --save
 
 2) Accessing or—if your project needs a server (not required)—running your project
 

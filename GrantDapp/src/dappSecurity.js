@@ -642,12 +642,13 @@ grantMgmt.setProvider(window.ethereum)
 window.onload = async () => {
 	var valueOnLoad = await grantMgmt.methods.paused().call()
 	const pausedValueOnLoad = document.getElementById('pause-value')
+	//console.log(valueOnLoad)
 	// do I need this next line???????????????????????????????????????????????????????????
-	const getCheckPauseValue = document.getElementById('checkPauseButton')
+	//const getCheckPauseValue = document.getElementById('checkPauseButton')
 	const getPauseValue = document.getElementById('pauseButton')
 	const getUnPauseValue = document.getElementById('unpauseButton')
-	getCheckPauseValue.style.visibility = "hidden"
-	if (valueOnLoad == 'false') {
+	//getCheckPauseValue.style.visibility = "hidden"
+	if (valueOnLoad == true) {
 		pausedValueOnLoad.innerHTML = 'Contract is Paused'
 		getPauseValue.style.visibility = "hidden"
 		getUnPauseValue.style.visibility = "visible"
@@ -657,26 +658,18 @@ window.onload = async () => {
 		getPauseValue.style.visibility = "visible"
 	}
 }
-//
-//
-//
-//
-// My dApp behavior is detailed below...
-//
-//
-//
-//
+
 
 // Pause Button
 if (document.getElementById('pauseButton')) {	
 	const clickPauseButton = document.getElementById('pauseButton')
 	clickPauseButton.onclick = async () => {
 		var value = await grantMgmt.methods.pause().send({from: ethereum.selectedAddress})
-		// console.log(value)
+		//console.log(value)
 		var pauseValue = document.getElementById('pause-value');
 		pauseValue.innerHTML = 'Contract is Paused'
-		const getCheckPauseValue = document.getElementById('checkPauseButton')
-		getCheckPauseValue.style.visibility = "hidden"
+		// const getCheckPauseValue = document.getElementById('checkPauseButton')
+		// getCheckPauseValue.style.visibility = "hidden"
 		const getPauseValue = document.getElementById('pauseButton')
 		getPauseValue.style.visibility = "hidden"
 		const getUnPauseValue = document.getElementById('unpauseButton')
@@ -688,11 +681,11 @@ if (document.getElementById('unpauseButton')) {
 	const clickUnpauseButton = document.getElementById('unpauseButton')
 	clickUnpauseButton.onclick = async () => {
 		var value = await grantMgmt.methods.unpause().send({from: ethereum.selectedAddress})
-		// console.log(value)
+		//console.log(value)
 		var pauseValue = document.getElementById('pause-value');
 		pauseValue.innerHTML = 'Contract is Not Paused'
-		const getCheckPauseValue = document.getElementById('checkPauseButton')
-		getCheckPauseValue.style.visibility = "hidden"
+		// const getCheckPauseValue = document.getElementById('checkPauseButton')
+		// getCheckPauseValue.style.visibility = "hidden"
 		const getUnPauseValue = document.getElementById('unpauseButton')
 		getUnPauseValue.style.visibility = "hidden"
 		const getPauseValue = document.getElementById('pauseButton')
@@ -700,33 +693,33 @@ if (document.getElementById('unpauseButton')) {
 	}
 }
 // Get Paused Status
-if (document.getElementById('checkPauseButton')) {
-	const getCheckPauseValue = document.getElementById('checkPauseButton')
-	const getPauseValue = document.getElementById('pauseButton')
-	const getUnPauseValue = document.getElementById('unpauseButton')
+// if (document.getElementById('checkPauseButton')) {
+// 	const getCheckPauseValue = document.getElementById('checkPauseButton')
+// 	const getPauseValue = document.getElementById('pauseButton')
+// 	const getUnPauseValue = document.getElementById('unpauseButton')
 	
-	getPauseValue.style.visibility = "hidden"
-	getUnPauseValue.style.visibility = "hidden"
+// 	getPauseValue.style.visibility = "hidden"
+// 	getUnPauseValue.style.visibility = "hidden"
 
-	getCheckPauseValue.onclick = async () => {
-		var value = await grantMgmt.methods.paused().call()
-		//console.log(value)
-		const pausedValue = document.getElementById('pause-value')
-		// pausedValue.innerHTML = 'Contract is Paused ' + value
+// 	getCheckPauseValue.onclick = async () => {
+// 		var value = await grantMgmt.methods.paused().call()
+// 		//console.log(value)
+// 		const pausedValue = document.getElementById('pause-value')
+// 		// pausedValue.innerHTML = 'Contract is Paused ' + value
 	
-		if (value == 'false') {
-			pausedValue.innerHTML = 'Contract is Paused'
-			//console.log('show pause button')
-			getPauseValue.style.visibility = "hidden"
-			getUnPauseValue.style.visibility = "visible"
-		} else {
-			pausedValue.innerHTML = 'Contract is Not Paused'
-//			console.log('show unpause button')
-			getUnPauseValue.style.visibility = "hidden"
-			getPauseValue.style.visibility = "visible"
-		}
-	}
-}
+// 		if (value == 'false') {
+// 			pausedValue.innerHTML = 'Contract is Paused'
+// 			//console.log('show pause button')
+// 			getPauseValue.style.visibility = "hidden"
+// 			getUnPauseValue.style.visibility = "visible"
+// 		} else {
+// 			pausedValue.innerHTML = 'Contract is Not Paused'
+// //			console.log('show unpause button')
+// 			getUnPauseValue.style.visibility = "hidden"
+// 			getPauseValue.style.visibility = "visible"
+// 		}
+// 	}
+// }
 
 
 // Ownership Functionality
@@ -737,7 +730,7 @@ if (document.getElementById('clickTransfer')) {
 		const newOwnerValue = document.getElementById('_newOwner').value;
 		const ownershipChanged = document.getElementById('ownershipChanged')
 		ownershipChanged.innerHTML = ``
-		console.log(newOwnerValue)
+		//console.log(newOwnerValue)
 		await grantMgmt.methods.transferOwnership(newOwnerValue).send({from: ethereum.selectedAddress}).then(result => {
 			//console.log(result.transactionHash)
 			ownershipChanged.innerHTML = `New owner is Assigned`
