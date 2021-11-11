@@ -44,12 +44,24 @@
       <!-- <button id="checkAwards" class="full">Check Number of Awards</button> -->
       <div id="awardsNumber" class="full"></div>
       </div>
+
+      <div class="controls full">
+
+        <table class="full" id="grantsTable">
+          <thead><tr><td>Vendor</td><td>Grant Number</td><td>Total Award Value</td><td>Token Transactions</td></tr></thead>
+          <tbody>
+          <!-- <tr><td><div id="vendorName" class="full"></div></td><td><div id="grantNumber" class="full"></div></td><td><div id="awardsValue" class="full"></div></td></tr> -->
+        </tbody>
+        </table>
+
+      </div>
+
     </div>
    </form>
 
       <!--  Specific Grant Award Information -->
 
-      <form onsubmit="myFunction(); return false;">    
+      <!-- <form onsubmit="myFunction(); return false;">    
         <div class="form-group">
           <h2 class="heading full">Award Information</h2>
           <div class="controls full">
@@ -62,25 +74,36 @@
           </div>
 
         </div>
-       </form>
+       </form> -->
 
 
-       <form onsubmit="myFunction(); return false;">    
-        <div class="form-group">
+       <form onsubmit="myFunction(); return false;"">    
+        <div class="form-group" id="awardDetailsForm">
           <h2 class="heading full">Award Details</h2>
           <div class="controls full">
 
-            <table class="full">
-              
-              <tr><th>Vendor</th><th>Grant Number</th><th>Total Award Value</th></tr>
-              
-              <tr><td><div id="vendorName" class="full"></div></td><td><div id="grantNumber" class="full"></div></td><td><div id="awardsValue" class="full"></div></td></tr>
-              <tr><td>Vendor</td><td>Grant Number</td><td>Total Award Value</td></tr>
-              <tr><td>Vendor</td><td>Grant Number</td><td>Total Award Value</td></tr>
-              <tr><td>Vendor</td><td>Grant Number</td><td>Total Award Value</td></tr>
-              <tr><td>Vendor</td><td>Grant Number</td><td>Total Award Value</td></tr>
-              <tr><td>Vendor</td><td>Grant Number</td><td>Total Award Value</td></tr>
-            </table>
+            <!-- <table class="full" id="grantsTable">
+              <thead><tr><td>Vendor</td><td>Grant Number</td><td>Total Award Value</td></tr></thead>
+              <tbody>
+              <!-- <tr><td><div id="vendorName" class="full"></div></td><td><div id="grantNumber" class="full"></div></td><td><div id="awardsValue" class="full"></div></td></tr> -->
+            <!-- </tbody>
+            </table> -->
+
+              <div id="awardeeName" class="full"></div>
+              <div id="awardeeAddr" class="full"></div>
+              <div id="cageCode" class="full"></div>
+
+              <div id="naicsCode" class="full"></div>
+              <div id="grantNumber" class="full"></div>
+              <div id="effectiveDate" class="full"></div>
+
+              <div id="completionDate" class="full"></div>
+              <div id="laborCLINValue" class="full"></div>
+              <div id="travelCLINValue" class="full"></div>
+
+              <div id="odcValue" class="full"></div>
+              <div id="totalAwardValue" class="full"></div>
+              <div id="completed" class="full"></div>
 
           </div>
 
