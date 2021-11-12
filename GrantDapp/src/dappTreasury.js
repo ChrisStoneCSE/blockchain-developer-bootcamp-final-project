@@ -1,8 +1,6 @@
-
 // Using the 'load' event listener for Javascript to
 // check if window.ethereum is available
 // check who is the current owner
-
 
 window.addEventListener('load', function() {
   

@@ -7,58 +7,74 @@ const GrantManager = artifacts.require("GrantManager");
  * Ethereum client
  * See docs: https://www.trufflesuite.com/docs/truffle/testing/writing-tests-in-javascript
  */
-contract("GrantManager", function (/* accounts */) {
+contract("GrantManager", function (accounts) {
 
 // Test Number One
 
-  it("Test One: should assert true", async function () {
+  it("Test One: deployed should assert true", async function () {
     await GrantManager.deployed();
     return assert.isTrue(true);
   });
 
   // Test Number Two
-  it("Test Two: has an initial value of 0", async () => {
+  it("Test Two: NumberAwards has an initial value of 0", async () => {
     // get the contract that's been deployed
     const gmInstance = await GrantManager.deployed();
-
     //verify it has an initial value of 0
     const numAwards = await gmInstance.getNumberAwards.call()
     assert.equal(numAwards, 0, 'Initial state should be zero');
-
   })
 
-
-// Mint - then Burn - then increaseAllowance?
-
-
-// Test Number Three
-describe("Functionality", () => {
-  it("Test Three: should burn 0 tokens", async () => {
-    // grab the contract
+  // Test Number Three
+  it("Test Three: Token symbol is set to NSFC", async () => {
+    // get the contract that's been deployed
     const gmInstance = await GrantManager.deployed();
-    // change the number
-    await gmInstance.burn(0);
-
-    const tokenSupply = await gmInstance.totalSupply.call();
-    assert.equal(tokenSupply, 0, '${tokenSupply} was not burned.')
+    //verify it has an initial value of 0
+    const nameSymbol = await gmInstance.symbol.call()
+    assert.equal(nameSymbol, 'NSFC', 'Initial name should be NSFC');
   })
-}
-// Test Number Four
+
+  // Test Number Four
+  it("Test Four: Owner is set to contract number", async () => {
+    // get the contract that's been deployed
+    const gmInstance = await GrantManager.deployed();
+    const thisAddress = accounts[0];
+    //verify the contract owner is this correct account
+    const nameOwner = await gmInstance.owner.call({ from: accounts[0] })
+    assert.equal(nameOwner, thisAddress, 'Initial owner should be set');
+  })
+
+  // Test Number Five
+  it("Test Five: Contract is not paused", async () => {
+    // get the contract that's been deployed
+    const gmInstance = await GrantManager.deployed();
+    //const thisAddress = accounts[0];
+    //verify the contract is not paused
+    const pausedState = await gmInstance.paused.call({ from: accounts[0] })
+    assert.equal(pausedState, false, 'Contract should not be paused.');
+  })
+
+  // Mint
+
+  // createGrant
+
+ // describe("Functionality", () => {
+    // it("Test Three: should mint 100 tokens", async () => {
+    //   // grab the contract
+    //   const gmInstance = await GrantManager.deployed();
+    //   // change the number
+
+    //   await gmInstance.mint(0x71041468469E2B638B0E60CeC2a128c336E07F96, 100).send({from: ethereum.selectedAddress}).then(result => {
+        
+    //   })
+    //   assert.equal(tokenSupply, 100, 'Token was not minted.')
+    // })
+
+  })
+ // })
 
 
-  //await grantMgmt.methods.mint(addressValue, numberTokens).send({from: ethereum.selectedAddress})
 
+// )
 
-// Test Number Five
-
-  // var valueName = await grantMgmt.methods.name().call()
-  // var valueSymbol = await grantMgmt.methods.symbol().call()
-  // var valueSupply = await grantMgmt.methods.totalSupply().call()
-
-  //	var valueOnLoad = await grantMgmt.methods.paused().call()
-
-
-
-)
-
-});
+// });

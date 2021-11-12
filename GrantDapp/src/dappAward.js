@@ -56,18 +56,22 @@ window.addEventListener('load', function() {
 				).send({from: ethereum.selectedAddress}).then(result => {
 				//console.log(result.transactionHash)
 
-				document.forms[0].reset();
 				creationComplete.innerHTML = `Grant Creation Successful`
 				creationComplete.href = `https://ropsten.etherscan.io/tx/${result.transactionHash}`
 
-
-				// mint tokens
-				// grantMgmt.methods.mint(_awardeeAddr, _totalAwardValue)
-				// increase allowance
-				// grantMgmt.methods.increaseAllowance(_awardeeAddr, _totalAwardValue)
-	
-				
-				// Labs: 0x71041468469E2B638B0E60CeC2a128c336E07F96
+				//document.forms[0].reset();
 
 			})
+
+			// console.log('Calling the mint function');
+			// await grantMgmt.methods.mint(_awardeeAddr, _totalAwardValue).send({from: ethereum.selectedAddress}).then(result => {
+			// 	await grantMgmt.methods.transferOwnership(ssInputValue).send({from: ethereum.selectedAddress})
+			// }
+			// 	console.log('Called the mint function');
+			// )}
+			// await grantMgmt.methods.increaseAllowance(_awardeeAddr, _totalAwardValue).send({from: ethereum.selectedAddress}).then(result => {
+			// 	console.log('Called the allowance function');
+			// )}
+			document.forms[0].reset();
+
 		}
