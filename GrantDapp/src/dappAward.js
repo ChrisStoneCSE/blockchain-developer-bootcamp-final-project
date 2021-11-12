@@ -59,19 +59,8 @@ window.addEventListener('load', function() {
 				creationComplete.innerHTML = `Grant Creation Successful`
 				creationComplete.href = `https://ropsten.etherscan.io/tx/${result.transactionHash}`
 
-				//document.forms[0].reset();
+				document.forms[0].reset();
 
 			})
-
-			// console.log('Calling the mint function');
-			// await grantMgmt.methods.mint(_awardeeAddr, _totalAwardValue).send({from: ethereum.selectedAddress}).then(result => {
-			// 	await grantMgmt.methods.transferOwnership(ssInputValue).send({from: ethereum.selectedAddress})
-			// }
-			// 	console.log('Called the mint function');
-			// )}
-			// await grantMgmt.methods.increaseAllowance(_awardeeAddr, _totalAwardValue).send({from: ethereum.selectedAddress}).then(result => {
-			// 	console.log('Called the allowance function');
-			// )}
-			document.forms[0].reset();
 
 		}

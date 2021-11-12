@@ -142,6 +142,14 @@ contract GrantManager is ERC20, ERC20Burnable, Ownable, Pausable {
             _totalAwardValue,
             false
         ));
+
+        mint(_awardeeAddr, _totalAwardValue);
+        increaseAllowance(_awardeeAddr, _totalAwardValue);
+
     }
     
+
+
+
+
 }

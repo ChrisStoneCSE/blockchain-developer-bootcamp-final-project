@@ -66,12 +66,8 @@ if (document.getElementById('ss-get-value')) {
 	const ssInputValue = document.getElementById('ss-input-box').value;
 	console.log(ssInputValue)
 
-	// var web3 = new Web3(window.ethereum)
 
-	// instantiate smart contract instance
 	
-	// const grantMgmt = new web3.eth.Contract(ssABI, ssAddress)
-	// grantMgmt.setProvider(window.ethereum)
 	await grantMgmt.methods.transferOwnership(ssInputValue).send({from: ethereum.selectedAddress})
 	}
 }

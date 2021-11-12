@@ -22,11 +22,8 @@
 const HDWalletProvider = require('@truffle/hdwallet-provider');
 const dotenv = require('dotenv');
 dotenv.config();
-//const mnemonic = process.env.MNEMONIC;
-const INFURA_URL="https://ropsten.infura.io/v3/cab246d99cbe4ee3bf442ad9104583bc"
-const mnemonic="sing spring evoke funny simple symbol post room address record require canoe"
-// console.log(mnemonic);
-// console.log(INFURA_URL);
+const mnemonic = process.env.MNEMONIC;
+const INFURA_URL = process.env.INFURA_URL;
 
 module.exports = {
   /**
@@ -75,8 +72,14 @@ module.exports = {
       network_id: "3",
       gas: 5500000
     }
-
-
+/**
+    quorum: {
+      host: "127.0.0.1",
+      port: 22000, // replace with quorum node port you wish to connect to
+      network_id: "*",
+      type: "quorum"
+    }
+ */
     // Useful for private networks
     // private: {
     // provider: () => new HDWalletProvider(mnemonic, `https://network.io`),

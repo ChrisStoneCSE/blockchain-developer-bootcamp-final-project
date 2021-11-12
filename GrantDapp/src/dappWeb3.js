@@ -2,7 +2,7 @@
 //lockdown();
 // hardens the entire surface of the JS environment
 // contract address on Ropsten:
-const ssAddress = '0x18A30cbC6E692f0C6e3076fE15e019431EBE85DB'
+const ssAddress = '0x908E949F7795225c772e9cd61B44cA8CD492C9ca'
 // localStorage.setItem("addressLocalStorage", ssAddress); 
 // add contract ABI from Remix:
 
