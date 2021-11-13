@@ -37,13 +37,23 @@
 * Independently, an auditor can go to a web page to verify all contract info and TXs.
 * Make the Grant Award an NFT? Or create a NFT at grant completion?
 
+
+## Detailed Project Information:
+
+* [todo] Avoiding Common Attacks can be found [here](avoiding_common_attacks.md).
+
+* [todo] Design Pattern Decisions can be found [here](design_pattern_decisions.md).
+
+* [todo] Deployed address can be found [here](deployed_address.txt).
+
+
 # 2. Directory Structure
 
 The dApp  and its supporting HTML/CSS/JS files are in the folder "*/GrantDapp/*"
 
 The solidity code and supporting files are in the folder "*/GrantMgmt/*"
 
-## /GrantDapp
+### /GrantDapp
 
 * [images/](./GrantDapp/images)
   * [logos/](./GrantDapp/images/logos)
@@ -66,7 +76,7 @@ The solidity code and supporting files are in the folder "*/GrantMgmt/*"
 * [ViewGrants.html](./GrantDapp/ViewGrants.html)
 * [index.html](./GrantDapp/index.html)
 
-## /GrantMgmt
+### /GrantMgmt
 
 * [build/](./GrantMgmt/build)
   * [contracts/](./GrantMgmt/build/contracts)
@@ -103,7 +113,7 @@ I would like my certification as an NFT sent to:
 ```
 0x17Aa4c39d9B3996B2f7994da83E14c5ACB5f9d7b
 ```
-
+*(ETH, ER20s, and Bored Ape Yacht Club NFTs are also accepted.)*
 # 5. Installing Dependencies
 
 Run the following commands to install dependencies needed for this project:
