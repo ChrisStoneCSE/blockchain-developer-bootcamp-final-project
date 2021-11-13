@@ -3,6 +3,20 @@
 
 **Student: Christopher Stone**
 
+**Table of Contents**
+
+- [1. Project Description](#1-project-description)
+- [2. Detailed Project Information](#2-detailed-project-information)
+- [3. Directory Structure](#3-directory-structure)
+		- [3.0.1. /GrantDapp](#301-grantdapp)
+		- [3.0.2. /GrantMgmt](#302-grantmgmt)
+- [4. Frontend Access](#4-frontend-access)
+- [5. Public Ethereum Address for NFT Certificate](#5-public-ethereum-address-for-nft-certificate)
+- [6. Installing Dependencies](#6-installing-dependencies)
+- [7. Accessing the Project](#7-accessing-the-project)
+- [8. Unit Testing](#8-unit-testing)
+- [9. Screencast of Project Walk Through](#9-screencast-of-project-walk-through)
+
 # 1. Project Description
 
 **Project Name**: Grant Delivery Workflow
@@ -38,7 +52,7 @@
 * Make the Grant Award an NFT? Or create a NFT at grant completion?
 
 
-## Detailed Project Information:
+# 2. Detailed Project Information
 
 * [todo] Avoiding Common Attacks can be found [here](avoiding_common_attacks.md).
 
@@ -47,13 +61,13 @@
 * [todo] Deployed address can be found [here](deployed_address.txt).
 
 
-# 2. Directory Structure
+# 3. Directory Structure
 
 The dApp  and its supporting HTML/CSS/JS files are in the folder "*/GrantDapp/*"
 
 The solidity code and supporting files are in the folder "*/GrantMgmt/*"
 
-### /GrantDapp
+### 3.0.1. /GrantDapp
 
 * [images/](./GrantDapp/images)
   * [logos/](./GrantDapp/images/logos)
@@ -76,7 +90,7 @@ The solidity code and supporting files are in the folder "*/GrantMgmt/*"
 * [ViewGrants.html](./GrantDapp/ViewGrants.html)
 * [index.html](./GrantDapp/index.html)
 
-### /GrantMgmt
+### 3.0.2. /GrantMgmt
 
 * [build/](./GrantMgmt/build)
   * [contracts/](./GrantMgmt/build/contracts)
@@ -100,13 +114,13 @@ The solidity code and supporting files are in the folder "*/GrantMgmt/*"
   * [grant_manager.js](./GrantMgmt/test/grant_manager.js)
 * [truffle-config.js](./GrantMgmt/truffle-config.js)
 
-# 3. Frontend Access
+# 4. Frontend Access
 
 The frontend was developed in HTML/CSS/JS. 
 
 [todo] This demo is hosted at: [This is my link](https://www.example.com)
 
-# 4. Public Ethereum Address for NFT Certificate
+# 5. Public Ethereum Address for NFT Certificate
 
 I would like my certification as an NFT sent to:
 
@@ -114,7 +128,7 @@ I would like my certification as an NFT sent to:
 0x17Aa4c39d9B3996B2f7994da83E14c5ACB5f9d7b
 ```
 *(ETH, ERC-20s, and Bored Ape Yacht Club NFTs are also accepted.)*
-# 5. Installing Dependencies
+# 6. Installing Dependencies
 
 Run the following commands to install dependencies needed for this project:
 
@@ -139,11 +153,11 @@ npm install --save-dev @truffle/hdwallet-provider
 npm install bip39 dotenv --save
 ```
 
-# 6. Accessing the Project
+# 7. Accessing the Project
 
    [todo] Accessing or—if your project needs a server (not required)—running your project
 
-# 7. Unit Testing
+# 8. Unit Testing
 
 The unit tests are contained in the file at: *GrantMgmt/test/grant_manager.js*.
 
@@ -168,6 +182,6 @@ To run all tests, simply run:
 $ truffle test
 ```
 
-# 8. Screencast of Project Walk Through
+# 9. Screencast of Project Walk Through
 
 [todo] Link to a screencast of me walking through the project.
