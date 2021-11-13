@@ -113,7 +113,7 @@ I would like my certification as an NFT sent to:
 ```
 0x17Aa4c39d9B3996B2f7994da83E14c5ACB5f9d7b
 ```
-*(ETH, ER20s, and Bored Ape Yacht Club NFTs are also accepted.)*
+*(ETH, ERC-20s, and Bored Ape Yacht Club NFTs are also accepted.)*
 # 5. Installing Dependencies
 
 Run the following commands to install dependencies needed for this project:
