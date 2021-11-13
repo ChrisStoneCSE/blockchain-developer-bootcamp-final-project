@@ -1,7 +1,7 @@
 
-Title: Blockchain Dev Bootcamp Final Project
+**Title: Blockchain Dev Bootcamp Final Project**
 
-Student: Christopher Stone
+**Student: Christopher Stone**
 
 # 1. Project Description
 
@@ -12,11 +12,11 @@ Student: Christopher Stone
 **Steps**:
 
 1. CO awards grant with:
- • Company Name
- • Title and Description of contract
- • Total funding
- • Number of Months
- • CLINs and Quantity
+ - Company Name
+ - Title and Description of contract
+ - Total funding
+ - Number of Months
+ - CLINs and Quantity
 
 2. CO funds smart contract with award value.
 
@@ -115,9 +115,17 @@ Then install each of the following:
 
 ```
 npm install -g npm
+```
+```
 npm install @openzeppelin/contracts
+```
+```
 npm install -g truffle
+```
+```
 npm install --save-dev @truffle/hdwallet-provider
+```
+```
 npm install bip39 dotenv --save
 ```
 
