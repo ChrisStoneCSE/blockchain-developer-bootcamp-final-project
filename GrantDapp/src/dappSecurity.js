@@ -10,8 +10,10 @@ window.addEventListener('load', function() {
     if (window.ethereum.isMetaMask === true) {
       // console.log('MetaMask is active')
 	  // console.log('getting current owner')
-	  const showOwnerOnLoad = document.getElementById('whoIsOwner')
-	  showOwnerOnLoad.innerHTML = 'Current Contract Owner: ' + ethereum.selectedAddress
+// 	  var whoIsTheOwner = await grantMgmt.methods.owner().call()
+// 	  const showOwnerOnLoad = document.getElementById('whoIsOwner')
+// //	  showOwnerOnLoad.innerHTML = 'Current Contract Owner: ' + ethereum.selectedAddress
+// 	  showOwnerOnLoad.innerHTML = 'Current Contract Owner: ' + whoIsTheOwner;
 
     } else {
       // console.log('MetaMask is not available')
@@ -26,6 +28,9 @@ window.addEventListener('load', function() {
 
 
 window.onload = async () => {
+	var whoIsTheOwner = await grantMgmt.methods.owner().call()
+	const showOwnerOnLoad = document.getElementById('whoIsOwner')
+	showOwnerOnLoad.innerHTML = 'Current Contract Owner: ' + whoIsTheOwner;
 	var valueOnLoad = await grantMgmt.methods.paused().call()
 	const pausedValueOnLoad = document.getElementById('pause-value')
 	//console.log(valueOnLoad)

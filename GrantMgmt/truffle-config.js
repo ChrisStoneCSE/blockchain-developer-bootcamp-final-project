@@ -79,6 +79,14 @@ module.exports = {
       network_id: "*",
       type: "quorum"
     }
+
+    quorum: {
+        provider: () => new HDWalletProvider(mnemonic, "https://nd-123-456-789.p2pify.com/3c6e0b8a9c15224a8228b9a98ca1531d"),
+        network_id: "*",
+        gasPrice: 0,
+        gas: 4500000,
+        type: "quorum"
+    }
  */
     // Useful for private networks
     // private: {
