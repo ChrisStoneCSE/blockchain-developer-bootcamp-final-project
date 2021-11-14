@@ -8,8 +8,6 @@
 - [1. Project Description](#1-project-description)
 - [2. Detailed Project Information](#2-detailed-project-information)
 - [3. Directory Structure](#3-directory-structure)
-		- [3.0.1. /GrantDapp](#301-grantdapp)
-		- [3.0.2. /GrantMgmt](#302-grantmgmt)
 - [4. Frontend Access](#4-frontend-access)
 - [5. Public Ethereum Address for NFT Certificate](#5-public-ethereum-address-for-nft-certificate)
 - [6. Installing Dependencies](#6-installing-dependencies)
@@ -66,52 +64,62 @@ The dApp  and its supporting HTML/CSS/JS files are in the folder "*/GrantDapp/*"
 
 The solidity code and supporting files are in the folder "*/GrantMgmt/*"
 
-### 3.0.1. /GrantDapp
-
-- [images/](./GrantDapp/images)
-  - [logos/](./GrantDapp/images/logos)
-    - [TechStack.png](./GrantDapp/images/logos/TechStack.png)
-    - [568px-NSF.svg.png](./GrantDapp/images/568px-NSF.svg.png)
-    - [favicon1.ico.gif](./GrantDapp/images/favicon1.ico.gif)
-    - [faviconCSE.png](./GrantDapp/images/faviconCSE.png)
-- [src/](./GrantDapp/src)
-  - [dapp.js](./GrantDapp/src/dapp.js)
-  - [dappAward.js](./GrantDapp/src/dappAward.js)
-  - [dappGrants.js](./GrantDapp/src/dappGrants.js)
-  - [dappSecurity.js](./GrantDapp/src/dappSecurity.js)
-  - [dappTreasury.js](./GrantDapp/src/dappTreasury.js)
-  - [dappWeb3.js](./GrantDapp/src/dappWeb3.js)
-  - [style.css](./GrantDapp/src/style.css)
-- [AwardGrant.html](./GrantDapp/AwardGrant.html)
-- [Onboard.html](./GrantDapp/Onboard.html)
-- [Security.html](./GrantDapp/Security.html)
-- [Treasury.html](./GrantDapp/Treasury.html)
-- [ViewGrants.html](./GrantDapp/ViewGrants.html)
-- [index.html](./GrantDapp/index.html)
-
-### 3.0.2. /GrantMgmt
-
-- [build/](./GrantMgmt/build)
-  - [contracts/](./GrantMgmt/build/contracts)
-    - [Context.json](./GrantMgmt/build/contracts/Context.json)
-    - [ERC20.json](./GrantMgmt/build/contracts/ERC20.json)
-    - [ERC20Burnable.json](./GrantMgmt/build/contracts/ERC20Burnable.json)
-    - [GrantManager.json](./GrantMgmt/build/contracts/GrantManager.json)
-    - [IERC20.json](./GrantMgmt/build/contracts/IERC20.json)
-    - [IERC20Metadata.json](./GrantMgmt/build/contracts/IERC20Metadata.json)
-    - [Migrations.json](./GrantMgmt/build/contracts/Migrations.json)
-    - [Ownable.json](./GrantMgmt/build/contracts/Ownable.json)
-    - [Pausable.json](./GrantMgmt/build/contracts/Pausable.json)
-- [contracts/](./GrantMgmt/contracts)
-  - [GrantManager.sol](./GrantMgmt/contracts/GrantManager.sol)
-  - [Migrations.sol](./GrantMgmt/contracts/Migrations.sol)
-- [migrations/](./GrantMgmt/migrations)
-  - [1_initial_migration.js](./GrantMgmt/migrations/1_initial_migration.js)
-  - [2_deploy_contracts.js](./GrantMgmt/migrations/2_deploy_contracts.js)
-- [test/](./GrantMgmt/test)
-  - [.gitkeep](./GrantMgmt/test/.gitkeep)
-  - [grant_manager.js](./GrantMgmt/test/grant_manager.js)
-- [truffle-config.js](./GrantMgmt/truffle-config.js)
+- 📂 __blockchain\-developer\-bootcamp\-final\-project__
+  - 📂 __GrantDapp__
+    - 📄 [AwardGrant.html](GrantDapp/AwardGrant.html)
+    - 📄 [Onboard.html](GrantDapp/Onboard.html)
+    - 📄 [Security.html](GrantDapp/Security.html)
+    - 📄 [Treasury.html](GrantDapp/Treasury.html)
+    - 📄 [ViewGrants.html](GrantDapp/ViewGrants.html)
+    - 📂 __images__
+      - 📄 [568px\-NSF.svg.png](GrantDapp/images/568px-NSF.svg.png)
+      - 📄 [CSEngineering Identity\_Hori.png](GrantDapp/images/CSEngineering%20Identity_Hori.png)
+      - 📄 [CSEngineering Identity\_Vert.png](GrantDapp/images/CSEngineering%20Identity_Vert.png)
+      - 📄 [faviconCSE.png](GrantDapp/images/faviconCSE.png)
+      - 📂 __logos__
+        - 📄 [TechStack.png](GrantDapp/images/logos/TechStack.png)
+    - 📄 [index.html](GrantDapp/index.html)
+    - 📂 __src__
+      - 📄 [dapp.js](GrantDapp/src/dapp.js)
+      - 📄 [dappAward.js](GrantDapp/src/dappAward.js)
+      - 📄 [dappGrants.js](GrantDapp/src/dappGrants.js)
+      - 📄 [dappSecurity.js](GrantDapp/src/dappSecurity.js)
+      - 📄 [dappTreasury.js](GrantDapp/src/dappTreasury.js)
+      - 📄 [dappWeb3.js](GrantDapp/src/dappWeb3.js)
+      - 📄 [style.css](GrantDapp/src/style.css)
+  - 📂 __GrantMgmt__
+    - 📂 __build__
+      - 📂 __contracts__
+        - 📄 [Context.json](GrantMgmt/build/contracts/Context.json)
+        - 📄 [ERC20.json](GrantMgmt/build/contracts/ERC20.json)
+        - 📄 [ERC20Burnable.json](GrantMgmt/build/contracts/ERC20Burnable.json)
+        - 📄 [GrantManager.json](GrantMgmt/build/contracts/GrantManager.json)
+        - 📄 [IERC20.json](GrantMgmt/build/contracts/IERC20.json)
+        - 📄 [IERC20Metadata.json](GrantMgmt/build/contracts/IERC20Metadata.json)
+        - 📄 [Migrations.json](GrantMgmt/build/contracts/Migrations.json)
+        - 📄 [Ownable.json](GrantMgmt/build/contracts/Ownable.json)
+        - 📄 [Pausable.json](GrantMgmt/build/contracts/Pausable.json)
+    - 📂 __contracts__
+      - 📄 [GrantManager.sol](GrantMgmt/contracts/GrantManager.sol)
+      - 📄 [Migrations.sol](GrantMgmt/contracts/Migrations.sol)
+    - 📂 __migrations__
+      - 📄 [1\_initial\_migration.js](GrantMgmt/migrations/1_initial_migration.js)
+      - 📄 [2\_deploy\_contracts.js](GrantMgmt/migrations/2_deploy_contracts.js)
+    - 📂 __test__
+      - 📄 [grant\_manager.js](GrantMgmt/test/grant_manager.js)
+    - 📄 [truffle\-config.js](GrantMgmt/truffle-config.js)
+  - 📄 [README.md](README.md)
+  - 📄 [avoiding\_common\_attacks.md](avoiding_common_attacks.md)
+  - 📂 __bin__
+    - 📂 __GrantMgmt__
+      - 📂 __contracts__
+        - 📄 [GrantManager\-solc\-output.json](bin/GrantMgmt/contracts/GrantManager-solc-output.json)
+        - 📄 [GrantManager.abi](bin/GrantMgmt/contracts/GrantManager.abi)
+        - 📄 [GrantManager.bin](bin/GrantMgmt/contracts/GrantManager.bin)
+        - 📄 [GrantManager.json](bin/GrantMgmt/contracts/GrantManager.json)
+  - 📄 [deployed\_address.txt](deployed_address.txt)
+  - 📄 [design\_pattern\_decisions.md](design_pattern_decisions.md)
+  - 📄 [final\-project\-checklist.txt](final-project-checklist.txt)
 
 # 4. Frontend Access
 
