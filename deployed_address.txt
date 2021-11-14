@@ -1,2 +1,4 @@
-Testnet Address:
-Network:
+Contain a `deployed_address.txt` file which contains the testnet address and network where your contract(s) have been deployed
+
+Testnet Address: 
+Network: Ropsten
