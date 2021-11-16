@@ -24,8 +24,11 @@ const dotenv = require('dotenv');
 dotenv.config();
 const mnemonic = process.env.MNEMONIC;
 const INFURA_URL = process.env.INFURA_URL;
+const my_api_key = process.env.MY_API_KEY;
+
 
 module.exports = {
+ 
   /**
    * Networks define how you connect to your ethereum client and let you set the
    * defaults web3 uses to send transactions. If you don't specify one truffle
@@ -96,6 +99,7 @@ module.exports = {
     // }
   },
 
+  
   // Set default mocha options here, use special reporters etc.
   mocha: {
     // timeout: 100000
@@ -104,7 +108,7 @@ module.exports = {
   // Configure your compilers
   compilers: {
     solc: {
-      version: "0.8.10",    // Fetch exact version from solc-bin (default: truffle's version)
+      version: "^0.8.0"    // Fetch exact version from solc-bin (default: truffle's version)
       // docker: true,        // Use "0.5.1" you've installed locally with docker (default: false)
       // settings: {          // See the solidity docs for advice about optimization and evmVersion
       //  optimizer: {
@@ -136,4 +140,12 @@ module.exports = {
     //   }
     // }
   // }
+  api_keys: {
+    etherscan: 'my_api_key',
+  }
+
+  // plugins: [
+  //   "truffle-plugin-debugger",
+  //    "truffle-security"
+  // ]
 };

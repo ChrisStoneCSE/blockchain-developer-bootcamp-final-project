@@ -153,7 +153,7 @@ npm install -g npm
 ```
 
 ```
-npm --install g solc@0.8.10
+npm install -g solc@0.8.10
 ```
 
 ```
@@ -163,7 +163,9 @@ npm install @openzeppelin/contracts
 ```
 npm install -g truffle
 ```
-
+```
+npm install -g ganache-cli
+```
 ```
 npm install --save-dev @truffle/hdwallet-provider
 ```
@@ -217,4 +219,4 @@ truffle test
 
 # 9. Screencast of Project Walk Through
 
-[todo] Link to a screencast of me walking through the project.
+[todo] Link to a screencast of me walking through the project. I can use a screenrecorder of my choosing or something like Loom.

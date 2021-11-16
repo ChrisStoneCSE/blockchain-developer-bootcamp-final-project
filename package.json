@@ -4,13 +4,17 @@
     "bip39": "^3.0.4",
     "dotenv": "^10.0.0",
     "fs": "^0.0.1-security",
+    "g": "^2.0.1",
     "ses": "^0.15.0",
-    "solc": "^0.8.9",
+    "solc": "^0.8.10",
     "truffle-hdwallet-provider": "^1.0.6",
+    "truffle-plugin-debugger": "^0.0.2",
+    "truffle-security": "^1.7.3",
     "yarn": "^1.22.17"
   },
   "devDependencies": {
     "@openzeppelin/truffle-upgrades": "^1.10.0",
-    "@truffle/hdwallet-provider": "^1.0.37"
+    "@truffle/hdwallet-provider": "^1.0.37",
+    "truffle-plugin-verify": "^0.5.18"
   }
 }
