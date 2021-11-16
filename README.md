@@ -60,7 +60,7 @@
 
 # 3. Directory Structure
 
-The dApp  and its supporting HTML/CSS/JS files are in the folder "*/GrantDapp/*"
+The dApp and its supporting HTML/CSS/JS files are in the folder "*/GrantDapp/*"
 
 The solidity code and supporting files are in the folder "*/GrantMgmt/*"
 
@@ -125,7 +125,7 @@ The solidity code and supporting files are in the folder "*/GrantMgmt/*"
 
 The frontend was developed in HTML/CSS/JS.
 
-[todo] This demo is hosted at: [This is my link](https://www.example.com)
+[todo] This demo is hosted at: [GitHub Pages](https://chrisstonecse.github.io/index.html)
 
 # 5. Public Ethereum Address for NFT Certificate
 
