@@ -18,7 +18,6 @@
  *
  */
 
-
 const HDWalletProvider = require('@truffle/hdwallet-provider');
 const dotenv = require('dotenv');
 dotenv.config();
@@ -74,23 +73,16 @@ module.exports = {
       provider: () => new HDWalletProvider(mnemonic, INFURA_URL),
       network_id: "3",
       gas: 5500000
-    }
-/**
-    quorum: {
-      host: "127.0.0.1",
-      port: 22000, // replace with quorum node port you wish to connect to
+    },
+
+    chainstack: {
+      provider: () => new HDWalletProvider(mnemonic, "https://nd-762-771-731.p2pify.com/15ee11be4e13600cc3e38d8f19c6dc78"),
       network_id: "*",
+      gasPrice: 0,
+      gas: 4500000,
       type: "quorum"
     }
 
-    quorum: {
-        provider: () => new HDWalletProvider(mnemonic, "https://nd-123-456-789.p2pify.com/3c6e0b8a9c15224a8228b9a98ca1531d"),
-        network_id: "*",
-        gasPrice: 0,
-        gas: 4500000,
-        type: "quorum"
-    }
- */
     // Useful for private networks
     // private: {
     // provider: () => new HDWalletProvider(mnemonic, `https://network.io`),
@@ -142,10 +134,10 @@ module.exports = {
   // }
   api_keys: {
     etherscan: 'my_api_key',
-  }
+  },
 
-  // plugins: [
-  //   "truffle-plugin-debugger",
-  //    "truffle-security"
-  // ]
+   plugins: [
+      "truffle-plugin-debugger",
+      "truffle-security"
+   ]
 };

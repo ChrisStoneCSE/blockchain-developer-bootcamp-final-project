@@ -2198,11 +2198,17 @@
       "links": {},
       "address": "0x3faE8f20101594d36D11CBc5041DFA5FD0dDf214",
       "transactionHash": "0x4542ef2c43e7b89513c977ccecb0034a76d433f719a8264447ff0cd97f1e0ad6"
+    },
+    "10001": {
+      "events": {},
+      "links": {},
+      "address": "0xada921127463659e5144781905Da5f8329f8b5D3",
+      "transactionHash": "0x6624cdeb6d08b4bda5852b3eb2b3565b8391b0fa7f2762048cd22415f3a4a7f6"
     }
   },
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-11-09T01:03:24.446Z",
-  "networkType": "ethereum",
+  "updatedAt": "2021-11-16T16:23:58.804Z",
+  "networkType": "quorum",
   "devdoc": {
     "kind": "dev",
     "methods": {},

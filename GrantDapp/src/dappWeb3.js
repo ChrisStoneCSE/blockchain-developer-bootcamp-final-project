@@ -1,8 +1,14 @@
 //import 'ses';
 //lockdown();
 // hardens the entire surface of the JS environment
+
 // contract address on Ropsten:
 const ssAddress = '0x908E949F7795225c772e9cd61B44cA8CD492C9ca'
+
+ //contract address on Quorum:
+//  const ssAddress = '0x89311A9305b373d1360D47c371F34891f428aD41'
+
+
 // localStorage.setItem("addressLocalStorage", ssAddress); 
 // add contract ABI from Remix:
 
@@ -606,6 +612,10 @@ const ssABI =
   theAuditLink.href = `https://ropsten.etherscan.io/address/` + ssAddress;
   
   var web3 = new Web3(window.ethereum)
+
+// Quorum Settings	
+//    const Web3 = require('web3');
+//    const web3 = new Web3(new Web3.providers.WebsocketProvider('https://nd-762-771-731.p2pify.com/15ee11be4e13600cc3e38d8f19c6dc78'));
   const grantMgmt = new web3.eth.Contract(ssABI, ssAddress)
   grantMgmt.setProvider(window.ethereum)
   
