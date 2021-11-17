@@ -7,7 +7,7 @@ window.addEventListener('load', function() {
   
   if (typeof window.ethereum !== 'undefined') {
     //console.log('window.ethereum is enabled')
-    if (window.ethereum.isMetaMask === true) {
+    if (window.ethereum.isMetaMask === true && ethereum.selectedAddress !== null) {
       	// console.log('MetaMask is active')
 	  	// console.log('getting current owner')
 		//   const showOwnerOnLoad = document.getElementById('whoIsOwner')

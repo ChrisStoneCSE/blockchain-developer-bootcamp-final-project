@@ -11,7 +11,11 @@ window.addEventListener('load', function() {
 		let mmDetected = document.getElementById('mm-detected')
 		mmDetected.innerHTML += 'Your Web3 wallet is active! You are now connected to Smart Contract: <br><br><br>' + ssAddress
 		const mmConnectButton = document.getElementById('mm-connect');
-		mmConnectButton.style.visibility = "hidden"
+		if (ethereum.selectedAddress !== null) {
+			mmConnectButton.style.visibility = "hidden"
+		} else {
+			mmConnectButton.style.visibility = "visible"
+		}
 	  }
       // add in web3 here
       var web3 = new Web3(window.ethereum)
@@ -54,6 +58,8 @@ if (document.getElementById('mm-current-account')) {
 	// and populate it with the current address
 	var mmCurrentAccount = document.getElementById('mm-current-account');
 	mmCurrentAccount.innerHTML = 'Currently connected with account: ' + ethereum.selectedAddress
+	const mmConnectButton = document.getElementById('mm-connect');
+	mmConnectButton.style.visibility = "hidden"
 	}
 }
 // grab the button for input to a contract:

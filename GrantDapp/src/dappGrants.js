@@ -5,23 +5,23 @@
 
 window.addEventListener('load', function() {
   
-  if (typeof window.ethereum !== 'undefined') {
-    //console.log('window.ethereum is enabled')
-    if (window.ethereum.isMetaMask === true) {
-      	// console.log('MetaMask is active')
-	  	// console.log('getting current owner')
-		//   const showOwnerOnLoad = document.getElementById('whoIsOwner')
-		//   showOwnerOnLoad.innerHTML = 'Current Contract Owner: ' + ethereum.selectedAddress
-	// do nothing
-    } else {
-      // console.log('MetaMask is not available')
-		window.location.assign("Onboard.html")
+	if (typeof window.ethereum !== 'undefined') {
+	  //console.log('window.ethereum is enabled')
+	  if (window.ethereum.isMetaMask === true && ethereum.selectedAddress !== null) {
+			// console.log('MetaMask is active')
+			// console.log('getting current owner')
+		  //   const showOwnerOnLoad = document.getElementById('whoIsOwner')
+		  //   showOwnerOnLoad.innerHTML = 'Current Contract Owner: ' + ethereum.selectedAddress
+	  // do nothing
+	  } else {
+		// console.log('MetaMask is not available')
+		  window.location.assign("Onboard.html")
 	  }
-  } else {
-    // console.log('window.ethereum - metamask - is not found')
-	window.location.assign("Onboard.html")
-  }
-})
+	} else {
+	  // console.log('window.ethereum - metamask - is not found')
+	  window.location.assign("Onboard.html")
+	}
+  })
 
 
 window.onload = async () => {
