@@ -125,7 +125,7 @@ The solidity code and supporting files are in the folder "*/GrantMgmt/*"
 
 The frontend was developed in HTML/CSS/JS.
 
-[todo] This demo is hosted at: [GitHub Pages](https://chrisstonecse.github.io/index.html)
+This demo is hosted at: [GitHub Pages](https://chrisstonecse.github.io/index.html)
 
 # 5. Public Ethereum Address for NFT Certificate
 
