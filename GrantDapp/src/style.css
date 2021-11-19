@@ -34,10 +34,16 @@ table {
   margin-right: auto;
 }
 
-caption, th, td {
-  text-align: left;
+th {
+  font-weight: bold;
+  vertical-align: middle;
+  text-align: center;
+}
+
+caption, td {
   font-weight: normal;
   vertical-align: middle;
+  text-align: center;
 }
 
 q, blockquote {

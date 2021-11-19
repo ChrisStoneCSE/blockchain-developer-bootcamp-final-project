@@ -25,7 +25,19 @@ Reference:
 ```
 https://swcregistry.io/docs/SWC-103
 ```
+## SWC-105 Unprotected Ether Withdrawal
 
+### ERC-20 functions are protected by the onlyOwner access controls
+
+Due to missing or insufficient access controls, malicious parties can withdraw some or all Ether from the contract account.
+
+This bug is sometimes caused by unintentionally exposing initialization functions. By wrongly naming a function intended to be a constructor, the constructor code ends up in the runtime byte code and can be called by anyone to re-initialize the contract.
+
+Reference:
+
+```
+https://swcregistry.io/docs/SWC-105
+```
 ## SWC-131 Presence of Unused Variables
 
 ### Irrelevant Code

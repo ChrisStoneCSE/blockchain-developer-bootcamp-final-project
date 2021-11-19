@@ -62,6 +62,11 @@ window.onload = async () => {
 			var newText3 = document.createTextNode('$' + arr[10]);
 			newValueCell.appendChild(newText3);
 
+			var newBalanceCell = newRow.insertCell();
+			var valueBalanceItem = await grantMgmt.methods.balanceOf(arr[1]).call()
+			var newText5 = document.createTextNode('$' + Math.round(valueBalanceItem * .000000000000000001));
+			newBalanceCell.appendChild(newText5);
+
 			var newLinkCell = newRow.insertCell();
 			var newText4 = document.createTextNode("Details");
 			var a = document.createElement('a');
