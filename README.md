@@ -219,4 +219,4 @@ truffle test
 
 # 9. Screencast of Project Walk Through
 
-[todo] Link to a screencast of me walking through the project. I can use a screenrecorder of my choosing or something like Loom.
+Here is the link to a [screencast](https://www.loom.com/share/821b674da2fd4a8a98f8d6f73060072b) of me walking through the project.
