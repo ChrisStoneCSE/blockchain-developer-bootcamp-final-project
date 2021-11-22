@@ -56,7 +56,7 @@
 
 - Design Pattern Decisions can be found [here](design_pattern_decisions.md).
 
-- [todo] Deployed address can be found [here](deployed_address.txt).
+- Deployed address can be found [here](deployed_address.txt).
 
 # 3. Directory Structure
 
@@ -176,7 +176,7 @@ npm install bip39 dotenv --save
 
 # 7. Accessing the Project
 
-   [todo] Accessing or—if your project needs a server (not required)—running your project
+   The Smart Contract is deployed to the Ropsten network at: '0x908E949F7795225c772e9cd61B44cA8CD492C9ca'
 
 # 8. Unit Testing
 
